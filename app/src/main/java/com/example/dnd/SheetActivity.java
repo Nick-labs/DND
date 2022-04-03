@@ -53,48 +53,18 @@ public class SheetActivity extends AppCompatActivity {
         String jsonString = intent.getStringExtra("json");
         System.out.println(jsonString);
 
-        try {
-            json = new JSONObject(jsonString);
+        if (!jsonString.equals("")) {
+            try {
+                json = new JSONObject(jsonString);
 
-        } catch (JSONException err) {
-            Log.d("Error", err.toString());
+                editTextId.setText(json.getInt("id") + "");
+                editTextName.setText(json.getString("name"));
+                editTextClass.setText(json.getString("class"));
+                editTextLevel.setText(json.getInt("level") + "");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
-        try {
-            System.out.println(json.getInt("id"));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            editTextId.setText(json.getInt("id") + "");
-            editTextName.setText(json.getString("name"));
-            editTextClass.setText(json.getString("class"));
-            editTextLevel.setText(json.getInt("level") + "");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-
-//        File dir = Environment.getExternalStorageDirectory();
-//        System.out.println(dir);
-//        File file = new File(dir, persFileName);
-
-//Read text from file
-//        StringBuilder text = new StringBuilder();
-
-//        try {
-//            BufferedReader br = new BufferedReader(new FileReader(file));
-//            String line;
-//
-//            while ((line = br.readLine()) != null) {
-//                text.append(line);
-//                text.append('\n');
-//            }
-//            br.close();
-//        } catch (IOException e) {
-//            //You'll need to add proper error handling here
-//        }
-
 
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,24 +77,16 @@ public class SheetActivity extends AppCompatActivity {
                         pers1.put("name", name);
                         pers1.put("class", editTextClass.getText().toString());
                         pers1.put("level", Integer.parseInt(editTextLevel.getText().toString()));
-                    } catch (JSONException e) {    // TODO Auto-generated catch block
+
+                        String jsonStr = pers1.toString();
+                        System.out.println("jsonString: " + jsonStr);
+                        writeToFile(name + ".json", jsonStr, getBaseContext());
+                        // TODO: delete old sheet
+                    } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
-//                JSONArray jsonArray = new JSONArray();
-//                jsonArray.put(student1);
-//                JSONObject studentsObj = new JSONObject();
-//                try {
-//                    studentsObj.put("Students", jsonArray);
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//                String jsonStr = studentsObj.toString();
-                String jsonStr = pers1.toString();
-                System.out.println("jsonString: " + jsonStr);
-                writeToFile(name + ".json", jsonStr, getBaseContext());
-                readFile(name + ".json");
-
+//              JSONArray jsonArray = new JSONArray();
                 finish();
             }
         });
@@ -139,10 +101,5 @@ public class SheetActivity extends AppCompatActivity {
         } catch (IOException e) {
             Log.e("Exception", "File write failed: " + e.toString());
         }
-    }
-
-    private String readFile(String path) {
-        System.out.println("read");
-        return "";
     }
 }
