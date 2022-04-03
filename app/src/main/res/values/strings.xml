@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">DND</string>
+    <string name="app_name">DND SHEET</string>
+    <string name="characters">Персонажи</string>
+    <string name="done">Готово</string>
 </resources>
