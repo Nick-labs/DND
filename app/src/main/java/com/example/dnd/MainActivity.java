@@ -25,7 +25,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //        System.out.println(this.getFilesDir().toString());
-//        String path = Environment.getExternalStorageDirectory().toString() + "/Android";
+//        String path = Environment.getExternalStorageDirectory().toString() + "/Android"
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
         String path = this.getFilesDir().toString();
         Log.d("Files", "Path: " + path);
         File directory = new File(path);
@@ -42,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SheetActivity.class);
 //                intent.putExtra("fileName", name);
+//                String json = readFile(files[files.length - 1]);
                 String json = readFile(files[0]);
                 intent.putExtra("json", json);
                 startActivityForResult(intent, 300);
@@ -61,8 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 text.append('\n');
             }
             br.close();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
 
             //You'll need to add proper error handling here
         }
