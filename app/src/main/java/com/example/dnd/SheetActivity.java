@@ -26,7 +26,6 @@ import java.io.OutputStreamWriter;
 
 public class SheetActivity extends AppCompatActivity {
     Button buttonBack;
-    EditText editTextId;
     EditText editTextName;
     EditText editTextClass;
     EditText editTextLevel;
@@ -44,7 +43,6 @@ public class SheetActivity extends AppCompatActivity {
 
 
         buttonBack = findViewById(R.id.buttonBack);
-        editTextId = findViewById(R.id.editTextId);
         editTextName = findViewById(R.id.editTextName);
         editTextClass = findViewById(R.id.editTextClass);
         editTextLevel = findViewById(R.id.editTextLevel);
@@ -56,8 +54,6 @@ public class SheetActivity extends AppCompatActivity {
         if (!jsonString.equals("")) {
             try {
                 json = new JSONObject(jsonString);
-
-                editTextId.setText(json.getInt("id") + "");
                 editTextName.setText(json.getString("name"));
                 editTextClass.setText(json.getString("class"));
                 editTextLevel.setText(json.getInt("level") + "");
@@ -71,9 +67,8 @@ public class SheetActivity extends AppCompatActivity {
             public void onClick(View view) {
                 JSONObject pers1 = new JSONObject();
                 String name = editTextName.getText().toString();
-                if (!editTextLevel.getText().toString().equals("") && !editTextId.getText().toString().equals("")) {
+                if (!editTextLevel.getText().toString().equals("")){
                     try {
-                        pers1.put("id", Integer.parseInt(editTextId.getText().toString()));
                         pers1.put("name", name);
                         pers1.put("class", editTextClass.getText().toString());
                         pers1.put("level", Integer.parseInt(editTextLevel.getText().toString()));
@@ -81,7 +76,6 @@ public class SheetActivity extends AppCompatActivity {
                         String jsonStr = pers1.toString();
                         System.out.println("jsonString: " + jsonStr);
                         writeToFile(name + ".json", jsonStr, getBaseContext());
-                        // TODO: delete old sheet
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
