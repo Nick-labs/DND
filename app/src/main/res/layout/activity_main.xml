@@ -8,17 +8,17 @@
 
     <TextView
         android:id="@+id/charTextView"
-        android:layout_width="227dp"
-        android:layout_height="59dp"
+        android:layout_width="202dp"
+        android:layout_height="68dp"
         android:text="@string/characters"
         android:textColor="@color/black"
-        android:textSize="40sp"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.19"
+        app:layout_constraintHorizontal_bias="0.215"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.057" />
 
     <Button
         android:id="@+id/button"
