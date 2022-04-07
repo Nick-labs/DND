@@ -217,26 +217,25 @@
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="center_horizontal"
                 android:text="@string/characteristics_n_skills"
-                android:textSize="32sp"
-                android:layout_marginBottom="20dp"/>
+                android:textSize="28sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
+                android:layout_height="99dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                >
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/strength"
-                    android:textSize="28sp"
                     android:gravity="center_horizontal"
-                    />
+                    android:text="@string/strength"
+                    android:textSize="28sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -258,71 +257,27 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
-                                android:textSize="16dp" />
+                                android:inputType="number"
+                                android:text="0"
+                                android:textSize="16dp"
+                                android:gravity="center_horizontal"
+                                />
 
                             <TextView
                                 android:id="@+id/textView7"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/athletics"
                                 android:textSize="16dp" />
 
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <EditText
-                                android:id="@+id/editTextTexta"
-                                android:layout_width="50dp"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
-                                android:textSize="16dp" />
-
-                            <TextView
-                                android:id="@+id/textViewf"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="TextView"
-                                android:textSize="16dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <EditText
-                                android:id="@+id/editTextTextPersoqnName"
-                                android:layout_width="50dp"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
-                                android:textSize="16dp" />
-
-                            <TextView
-                                android:id="@+id/textVsiew7"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="TextView"
-                                android:textSize="16dp" />
                         </LinearLayout>
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="216dp"
-                        android:layout_height="126dp"
+                        android:layout_height="match_parent"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -335,8 +290,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+                                android:gravity="center_horizontal"
+
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -344,56 +301,11 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/saving_throw"
                                 android:textSize="16dp" />
 
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <EditText
-                                android:id="@+id/editTextTexta"
-                                android:layout_width="50dp"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
-                                android:textSize="16dp" />
-
-                            <TextView
-                                android:id="@+id/textViewf"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="TextView"
-                                android:textSize="16dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <EditText
-                                android:id="@+id/editTextTextPersoqnName"
-                                android:layout_width="50dp"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
-                                android:textSize="16dp" />
-
-                            <TextView
-                                android:id="@+id/textVsiew7"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="TextView"
-                                android:textSize="16dp" />
-                        </LinearLayout>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -402,18 +314,18 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
+                android:layout_height="134dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
                     android:text="@string/dexterity"
-                    android:textSize="28sp"
-                    android:gravity="center_horizontal"/>
+                    android:textSize="28sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -435,8 +347,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+                                android:gravity="center_horizontal"
+
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -444,7 +358,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/acrobatics"
                                 android:textSize="16dp" />
 
                         </LinearLayout>
@@ -459,8 +373,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+                                android:gravity="center_horizontal"
+
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -468,30 +384,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
-                                android:textSize="16dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <EditText
-                                android:id="@+id/editTextTextPersoqnName"
-                                android:layout_width="50dp"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
-                                android:textSize="16dp" />
-
-                            <TextView
-                                android:id="@+id/textVsiew7"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/sleight_of_hand"
                                 android:textSize="16dp" />
                         </LinearLayout>
 
@@ -512,8 +405,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+
+                                android:gravity="center_horizontal"
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -521,7 +416,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/stealth"
                                 android:textSize="16dp" />
 
                         </LinearLayout>
@@ -536,8 +431,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+                                android:gravity="center_horizontal"
+
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -545,32 +442,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/saving_throw"
                                 android:textSize="16dp" />
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <EditText
-                                android:id="@+id/editTextTextPersoqnName"
-                                android:layout_width="50dp"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
-                                android:textSize="16dp" />
-
-                            <TextView
-                                android:id="@+id/textVsiew7"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="TextView"
-                                android:textSize="16dp" />
-                        </LinearLayout>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -579,18 +454,18 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
+                android:layout_height="94dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
                     android:text="@string/consit"
-                    android:textSize="28sp"
-                    android:gravity="center_horizontal"/>
+                    android:textSize="28sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -612,8 +487,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+
+                                android:gravity="center_horizontal"
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -621,55 +498,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/saving_throw"
                                 android:textSize="16dp" />
 
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <EditText
-                                android:id="@+id/editTextTexta"
-                                android:layout_width="50dp"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
-                                android:textSize="16dp" />
-
-                            <TextView
-                                android:id="@+id/textViewf"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="TextView"
-                                android:textSize="16dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <EditText
-                                android:id="@+id/editTextTextPersoqnName"
-                                android:layout_width="50dp"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
-                                android:textSize="16dp" />
-
-                            <TextView
-                                android:id="@+id/textVsiew7"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="TextView"
-                                android:textSize="16dp" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -677,78 +508,7 @@
                     <LinearLayout
                         android:layout_width="216dp"
                         android:layout_height="126dp"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <EditText
-                                android:id="@+id/editTextTextPersonName"
-                                android:layout_width="50dp"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
-                                android:textSize="16dp" />
-
-                            <TextView
-                                android:id="@+id/textView7"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="TextView"
-                                android:textSize="16dp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <EditText
-                                android:id="@+id/editTextTexta"
-                                android:layout_width="50dp"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
-                                android:textSize="16dp" />
-
-                            <TextView
-                                android:id="@+id/textViewf"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="TextView"
-                                android:textSize="16dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <EditText
-                                android:id="@+id/editTextTextPersoqnName"
-                                android:layout_width="50dp"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
-                                android:textSize="16dp" />
-
-                            <TextView
-                                android:id="@+id/textVsiew7"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="TextView"
-                                android:textSize="16dp" />
-                        </LinearLayout>
-                    </LinearLayout>
+                        android:orientation="vertical" />
 
                 </LinearLayout>
 
@@ -757,17 +517,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
                     android:text="@string/intell"
-                    android:textSize="28sp"
-                    android:gravity="center_horizontal" />
+                    android:textSize="28sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -789,8 +549,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+                                android:gravity="center_horizontal"
+
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -798,7 +560,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/investigation"
                                 android:textSize="16dp" />
 
                         </LinearLayout>
@@ -813,8 +575,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+
+                                android:inputType="number"
+                                android:text="0"
+                                android:gravity="center_horizontal"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -822,7 +586,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/history"
                                 android:textSize="16dp" />
                         </LinearLayout>
 
@@ -836,8 +600,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+
+                                android:inputType="number"
+                                android:gravity="center_horizontal"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -845,7 +611,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/arcana"
                                 android:textSize="16dp" />
                         </LinearLayout>
 
@@ -866,8 +632,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+
+                                android:inputType="number"
+                                android:gravity="center_horizontal"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -875,7 +643,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/nature"
                                 android:textSize="16dp" />
 
                         </LinearLayout>
@@ -890,8 +658,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+                                android:gravity="center_horizontal"
+
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -899,7 +669,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/religion"
                                 android:textSize="16dp" />
                         </LinearLayout>
 
@@ -913,8 +683,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+                                android:gravity="center_horizontal"
+
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -922,7 +694,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/saving_throw"
                                 android:textSize="16dp" />
                         </LinearLayout>
                     </LinearLayout>
@@ -934,17 +706,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
                     android:text="@string/wisdom"
-                    android:textSize="28sp"
-                    android:gravity="center_horizontal" />
+                    android:textSize="28sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -966,8 +738,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+
+                                android:gravity="center_horizontal"
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -975,7 +749,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/perception"
                                 android:textSize="16dp" />
 
                         </LinearLayout>
@@ -990,8 +764,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+                                android:gravity="center_horizontal"
+
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -999,7 +775,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/survival"
                                 android:textSize="16dp" />
                         </LinearLayout>
 
@@ -1013,8 +789,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+
+                                android:gravity="center_horizontal"
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -1022,7 +800,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/medicine"
                                 android:textSize="16dp" />
                         </LinearLayout>
 
@@ -1043,8 +821,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+                                android:gravity="center_horizontal"
+
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -1052,8 +832,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
-                                android:textSize="16dp" />
+                                android:text="@string/insight"
+                                android:textSize="13sp" />
 
                         </LinearLayout>
 
@@ -1067,8 +847,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+
+                                android:gravity="center_horizontal"
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -1076,7 +858,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/animal_handing"
                                 android:textSize="16dp" />
                         </LinearLayout>
 
@@ -1090,8 +872,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+
+                                android:gravity="center_horizontal"
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -1099,7 +883,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/saving_throw"
                                 android:textSize="16dp" />
                         </LinearLayout>
                     </LinearLayout>
@@ -1111,17 +895,18 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="165dp"
-                android:orientation="vertical"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="80dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
                     android:text="@string/charisma"
-                    android:textSize="28sp"
-                    android:gravity="center_horizontal"/>
+                    android:textSize="28sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -1143,8 +928,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+                                android:gravity="center_horizontal"
+
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -1152,7 +939,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/performance"
                                 android:textSize="16dp" />
 
                         </LinearLayout>
@@ -1167,8 +954,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+
+                                android:gravity="center_horizontal"
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -1176,7 +965,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/intimidation"
                                 android:textSize="16dp" />
                         </LinearLayout>
 
@@ -1190,8 +979,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+                                android:gravity="center_horizontal"
+
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -1199,7 +990,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/deception"
                                 android:textSize="16dp" />
                         </LinearLayout>
 
@@ -1220,8 +1011,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+                                android:gravity="center_horizontal"
+
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -1229,7 +1022,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/persuasion"
                                 android:textSize="16dp" />
 
                         </LinearLayout>
@@ -1244,8 +1037,10 @@
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
+                                android:gravity="center_horizontal"
+
+                                android:inputType="number"
+                                android:text="0"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -1253,32 +1048,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView"
+                                android:text="@string/saving_throw"
                                 android:textSize="16dp" />
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <EditText
-                                android:id="@+id/editTextTextPersoqnName"
-                                android:layout_width="50dp"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name"
-                                android:textSize="16dp" />
-
-                            <TextView
-                                android:id="@+id/textVsiew7"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="TextView"
-                                android:textSize="16dp" />
-                        </LinearLayout>
                     </LinearLayout>
 
                 </LinearLayout>

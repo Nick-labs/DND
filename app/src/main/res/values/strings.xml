@@ -18,5 +18,23 @@
     <string name="intell">Интеллект</string>
     <string name="wisdom">Мудрость</string>
     <string name="charisma">Харизма</string>
-
+    <string name="saving_throw">Спасбросок</string>
+    <string name="acrobatics">Акробатика</string>
+    <string name="animal_handing">Уход за животными</string>
+    <string name="arcana">Магия</string>
+    <string name="athletics">Атлетика</string>
+    <string name="deception">Обман</string>
+    <string name="history">История</string>
+    <string name="insight">Проницательность</string>
+    <string name="intimidation">Запугивание</string>
+    <string name="investigation">Анализ</string>
+    <string name="medicine">Медицина</string>
+    <string name="nature">Природа</string>
+    <string name="perception">Внимательность</string>
+    <string name="performance">Выступление</string>
+    <string name="persuasion">Убеждение</string>
+    <string name="religion">Религия</string>
+    <string name="sleight_of_hand">Ловкость рук</string>
+    <string name="stealth">Скрытность</string>
+    <string name="survival">Выживание</string>
 </resources>
