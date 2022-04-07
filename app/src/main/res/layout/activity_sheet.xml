@@ -5,7 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SheetActivity">
-
+    <Button
+        android:id="@+id/dice"
+        android:layout_width="66dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="32dp"
+        android:text="Dice"
+        android:textSize="10sp"
+        app:cornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <Button
         android:id="@+id/buttonBack"
         android:layout_width="382dp"
@@ -132,8 +143,6 @@
 
         </LinearLayout>
     </HorizontalScrollView>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

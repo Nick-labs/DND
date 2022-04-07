@@ -51,9 +51,11 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SheetActivity.class);
-                intent.putExtra("json", "");
-                startActivityForResult(intent, 300);
+                CustomDialogFragment dialog = new CustomDialogFragment();
+                dialog.show(getSupportFragmentManager(), "custom");
+//                Intent intent = new Intent(MainActivity.this, SheetActivity.class);
+//                intent.putExtra("json", "");
+//                startActivityForResult(intent, 300);
             }
         });
 
