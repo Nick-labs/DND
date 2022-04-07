@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:layout_width="321dp"
+        android:layout_height="199dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="8dp">
+
+            <Button
+                android:id="@+id/k20"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:insetLeft="10dp"
+                android:insetRight="10dp"
+                android:text="k20" />
+
+            <Button
+                android:id="@+id/k12"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:insetLeft="10dp"
+                android:insetRight="10dp"
+                android:text="k12" />
+
+            <Button
+                android:id="@+id/k10"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:insetLeft="10dp"
+                android:insetRight="10dp"
+                android:text="k10" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/k8"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:insetLeft="10dp"
+                android:insetRight="10dp"
+                android:text="k8" />
+
+            <Button
+                android:id="@+id/k6"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:insetLeft="10dp"
+                android:insetRight="10dp"
+                android:text="k6" />
+
+            <Button
+                android:id="@+id/k4"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:insetLeft="10dp"
+                android:insetRight="10dp"
+                android:text="k4" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TableRow>
+
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
