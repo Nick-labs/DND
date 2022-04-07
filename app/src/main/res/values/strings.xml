@@ -2,4 +2,14 @@
     <string name="app_name">DND SHEET</string>
     <string name="characters">Персонажи</string>
     <string name="done">Готово</string>
+    <string name="name">Имя персонажа</string>
+    <string name="class_">Класс</string>
+    <string name="level">Уровень</string>
+    <string name="armor">Класс доспеха</string>
+    <string name="initiative">Инициатива</string>
+    <string name="speed">Скорость</string>
+    <string name="hp">Хиты</string>
+    <string name="temp_hp">Временные хиты</string>
+    <string name="hp_dice">Кости хитов</string>
+
 </resources>
