@@ -11,5 +11,12 @@
     <string name="hp">Хиты</string>
     <string name="temp_hp">Временные хиты</string>
     <string name="hp_dice">Кости хитов</string>
+    <string name="characteristics_n_skills">Характеристики и навыки</string>
+    <string name="strength">Сила</string>
+    <string name="dexterity">Ловкость</string>
+    <string name="consit">Телосложение</string>
+    <string name="intell">Интеллект</string>
+    <string name="wisdom">Мудрость</string>
+    <string name="charisma">Харизма</string>
 
 </resources>
