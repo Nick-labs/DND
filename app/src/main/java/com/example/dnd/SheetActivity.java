@@ -3,6 +3,7 @@ package com.example.dnd;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActionBar;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +15,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,6 +30,8 @@ import java.io.OutputStreamWriter;
 
 public class SheetActivity extends AppCompatActivity {
     Button buttonBack;
+    Button dice;
+
     EditText editTextName;
     EditText editTextClass;
     EditText editTextLevel;
@@ -74,6 +79,10 @@ public class SheetActivity extends AppCompatActivity {
     EditText etLie;
     EditText etUbezhd;
     EditText etSavCHA;
+
+    EditText etInv;
+    EditText etProf;
+    EditText etFeatures;
 
     JSONObject json;
 
@@ -125,9 +134,25 @@ public class SheetActivity extends AppCompatActivity {
 
 
         buttonBack = findViewById(R.id.buttonBack);
+        dice = findViewById(R.id.dice);
         editTextName = findViewById(R.id.editTextName);
         editTextClass = findViewById(R.id.editTextClass);
         editTextLevel = findViewById(R.id.editTextLevel);
+        etInv = findViewById(R.id.editTextInv);
+        etProf = findViewById(R.id.editTextProf);
+        etFeatures = findViewById(R.id.editTextFeatures);
+
+
+
+ /*
+            вызов диалогового окна для кубиков
+        */
+        dice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogActivity(SheetActivity.this).show();
+            }
+        });
 
         Intent intent = getIntent();
         String jsonString = intent.getStringExtra("json");
@@ -175,6 +200,10 @@ public class SheetActivity extends AppCompatActivity {
                 etZapug.setText(json.getString("lie"));
                 etLie.setText(json.getString("ubezhd"));
                 etSavCHA.setText(json.getString("savCHA"));
+
+                etInv.setText(json.getString("inv"));
+                etProf.setText(json.getString("prof"));
+                etFeatures.setText(json.getString("features"));
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -227,6 +256,9 @@ public class SheetActivity extends AppCompatActivity {
                         pers1.put("lie", etLie.getText().toString());
                         pers1.put("ubezhd", etUbezhd.getText().toString());
                         pers1.put("savCHA", etSavCHA.getText().toString());
+                        pers1.put("inv", etInv.getText().toString());
+                        pers1.put("prof", etProf.getText().toString());
+                        pers1.put("features", etFeatures.getText().toString());
 
                         String jsonStr = pers1.toString();
                         System.out.println("jsonString: " + jsonStr);
@@ -251,5 +283,63 @@ public class SheetActivity extends AppCompatActivity {
         } catch (IOException e) {
             Log.e("Exception", "File write failed: " + e.toString());
         }
+    }
+
+    private Dialog dialogActivity(Context context) {
+        final Dialog dialog = new Dialog(context);
+        dialog.setContentView(R.layout.dialog_dice_2);
+
+        Button k20 = (Button) dialog.findViewById(R.id.k20);
+        Button k12 = (Button) dialog.findViewById(R.id.k12);
+        Button k10 = (Button) dialog.findViewById(R.id.k10);
+        Button k8 = (Button) dialog.findViewById(R.id.k8);
+        Button k6 = (Button) dialog.findViewById(R.id.k6);
+        Button k4 = (Button) dialog.findViewById(R.id.k4);
+
+        k20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                k20.setText("K20");
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(20), 10000);
+                snackbar.show();
+            }
+        });
+        k12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(12), 10000);
+                snackbar.show();
+            }
+        });
+        k10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(10), 10000);
+                snackbar.show();
+            }
+        });
+        k8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(8), 10000);
+                snackbar.show();
+            }
+        });
+        k6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(6), 10000);
+                snackbar.show();
+            }
+        });
+        k4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(4), 10000);
+                snackbar.show();
+            }
+        });
+
+        return dialog;
     }
 }

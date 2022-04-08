@@ -37,4 +37,13 @@
     <string name="sleight_of_hand">Ловкость рук</string>
     <string name="stealth">Скрытность</string>
     <string name="survival">Выживание</string>
+    <string name="k20">K20</string>
+    <string name="k12">K12</string>
+    <string name="k10">K10</string>
+    <string name="k8">K8</string>
+    <string name="k6">K6</string>
+    <string name="k4">K4</string>
+    <string name="inventory">Снаряжение</string>
+    <string name="prof">Владения</string>
+    <string name="features">Умения</string>
 </resources>
