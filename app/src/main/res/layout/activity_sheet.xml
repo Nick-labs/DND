@@ -63,7 +63,7 @@
                     android:orientation="vertical">
 
                     <EditText
-                        android:id="@+id/editTextNuvmber3"
+                        android:id="@+id/etKD"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
@@ -87,7 +87,7 @@
                     android:orientation="vertical">
 
                     <EditText
-                        android:id="@+id/editTextNumbedr2"
+                        android:id="@+id/etIni"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -111,7 +111,7 @@
                     android:orientation="vertical">
 
                     <EditText
-                        android:id="@+id/editTextNumbger"
+                        android:id="@+id/etSpeed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -143,7 +143,7 @@
                     android:orientation="vertical">
 
                     <EditText
-                        android:id="@+id/editTextNumber3"
+                        android:id="@+id/etHP"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
@@ -167,7 +167,7 @@
                     android:orientation="vertical">
 
                     <EditText
-                        android:id="@+id/editTextNumber2"
+                        android:id="@+id/etTempHP"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -192,7 +192,7 @@
                     android:orientation="vertical">
 
                     <EditText
-                        android:id="@+id/editTextNumber"
+                        android:id="@+id/etHPDice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -224,18 +224,37 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="99dp"
+                android:layout_height="122dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="@string/strength"
-                    android:textSize="28sp" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="196dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="@string/strength"
+                        android:textSize="28sp" />
+
+                    <EditText
+                        android:id="@+id/etSTR"
+                        android:layout_width="183dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:gravity="center_horizontal"
+                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="24sp" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -253,15 +272,14 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTextPersonName"
+                                android:id="@+id/etAthletics"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
+                                android:gravity="center_horizontal"
                                 android:inputType="number"
                                 android:text="0"
-                                android:textSize="16dp"
-                                android:gravity="center_horizontal"
-                                />
+                                android:textSize="16dp" />
 
                             <TextView
                                 android:id="@+id/textView7"
@@ -286,7 +304,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTextPersonName"
+                                android:id="@+id/etSavSTR"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -313,23 +331,42 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="134dp"
+                android:layout_width="wrap_content"
+                android:layout_height="163dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView5"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="@string/dexterity"
-                    android:textSize="28sp" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="196dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="@string/dexterity"
+                        android:textSize="28sp" />
+
+                    <EditText
+                        android:id="@+id/etDEX"
+                        android:layout_width="29dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:gravity="center_horizontal"
+                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="24sp" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="126dp"
+                    android:layout_height="142dp"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -343,7 +380,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTextPersonName"
+                                android:id="@+id/etAcrobat"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -369,7 +406,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTexta"
+                                android:id="@+id/etHand"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -401,7 +438,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTextPersonName"
+                                android:id="@+id/etStealth"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -427,7 +464,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTexta"
+                                android:id="@+id/etSavDEX"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -454,18 +491,37 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="94dp"
+                android:layout_height="120dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView5"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="@string/consit"
-                    android:textSize="28sp" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="196dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="@string/consit"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/etCON"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:gravity="center_horizontal"
+                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="24sp" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -483,7 +539,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTextPersonName"
+                                android:id="@+id/etSavCON"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -521,17 +577,36 @@
                 android:layout_marginRight="20dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView5"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="@string/intell"
-                    android:textSize="28sp" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="196dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="@string/intell"
+                        android:textSize="28sp" />
+
+                    <EditText
+                        android:id="@+id/etINT"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:gravity="center_horizontal"
+                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="24sp" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="126dp"
+                    android:layout_height="148dp"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -545,7 +620,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTextPersonName"
+                                android:id="@+id/etAnaliz"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -571,14 +646,14 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTexta"
+                                android:id="@+id/etHist"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
 
+                                android:gravity="center_horizontal"
                                 android:inputType="number"
                                 android:text="0"
-                                android:gravity="center_horizontal"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -596,13 +671,13 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTextPersoqnName"
+                                android:id="@+id/etMag"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
 
-                                android:inputType="number"
                                 android:gravity="center_horizontal"
+                                android:inputType="number"
                                 android:text="0"
                                 android:textSize="16dp" />
 
@@ -628,13 +703,13 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTextPersonName"
+                                android:id="@+id/etNature"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
 
-                                android:inputType="number"
                                 android:gravity="center_horizontal"
+                                android:inputType="number"
                                 android:text="0"
                                 android:textSize="16dp" />
 
@@ -654,7 +729,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTexta"
+                                android:id="@+id/etRelig"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -679,7 +754,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTextPersoqnName"
+                                android:id="@+id/etSavINT"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -710,17 +785,36 @@
                 android:layout_marginRight="20dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView5"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:gravity="center_horizontal"
-                    android:text="@string/wisdom"
-                    android:textSize="28sp" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="196dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="@string/wisdom"
+                        android:textSize="28sp" />
+
+                    <EditText
+                        android:id="@+id/etWIS"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:gravity="center_horizontal"
+                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="24sp" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="126dp"
+                    android:layout_height="140dp"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -734,7 +828,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTextPersonName"
+                                android:id="@+id/etVnimat"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -760,7 +854,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTexta"
+                                android:id="@+id/etSurv"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -785,7 +879,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTextPersoqnName"
+                                android:id="@+id/etMed"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -817,7 +911,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTextPersonName"
+                                android:id="@+id/etPronic"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -843,7 +937,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTexta"
+                                android:id="@+id/etAnim"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -868,7 +962,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTextPersoqnName"
+                                android:id="@+id/etSavWIS"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -894,19 +988,38 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
+                android:layout_height="180dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="80dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView5"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="@string/charisma"
-                    android:textSize="28sp" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="196dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="@string/charisma"
+                        android:textSize="28sp" />
+
+                    <EditText
+                        android:id="@+id/etCHA"
+                        android:layout_width="49dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:gravity="center_horizontal"
+                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="24sp" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -924,7 +1037,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTextPersonName"
+                                android:id="@+id/etPerf"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -950,7 +1063,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTexta"
+                                android:id="@+id/etZapug"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -975,7 +1088,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTextPersoqnName"
+                                android:id="@+id/etLie"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -1007,7 +1120,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTextPersonName"
+                                android:id="@+id/etUbezhd"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -1033,7 +1146,7 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextTexta"
+                                android:id="@+id/etSavCHA"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
