@@ -1,11 +1,13 @@
 package com.example.dnd;
 
-import androidx.appcompat.app.AppCompatActivity;
+import static com.example.dnd.R.layout.*;
 
-import android.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,23 +15,30 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
-import org.json.JSONException;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+//        CustomDialogFragment.TheFragmentListener {
+//
+//    // реализация методов интерфейса
+//    public void onTheFragmentBtnYClick(String url, String title) {
+//        // логика метода, данные уже в Activity
+//    }
+//
+//    public void onTheFragmentBtnXClick() {};
+//
+//    public void onTheFragmentCancelClick() {};
     Button button;
     ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(activity_main);
     }
 
     @Override
@@ -51,11 +60,9 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CustomDialogFragment dialog = new CustomDialogFragment();
-                dialog.show(getSupportFragmentManager(), "custom");
-//                Intent intent = new Intent(MainActivity.this, SheetActivity.class);
-//                intent.putExtra("json", "");
-//                startActivityForResult(intent, 300);
+                Intent intent = new Intent(MainActivity.this, SheetActivity.class);
+                intent.putExtra("json", "");
+                startActivityForResult(intent, 300);
             }
         });
 

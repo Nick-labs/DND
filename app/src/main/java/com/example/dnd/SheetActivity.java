@@ -3,6 +3,7 @@ package com.example.dnd;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActionBar;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,6 +29,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 
 public class SheetActivity extends AppCompatActivity {
+    Button dice;
     Button buttonBack;
     EditText editTextName;
     EditText editTextClass;
@@ -41,7 +46,7 @@ public class SheetActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().hide();
 
-
+        dice = findViewById(R.id.dice);
         buttonBack = findViewById(R.id.buttonBack);
         editTextName = findViewById(R.id.editTextName);
         editTextClass = findViewById(R.id.editTextClass);
@@ -61,6 +66,16 @@ public class SheetActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+
+        /*
+            вызов диалогового окна для кубиков
+        */
+        dice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               dialogActivity(SheetActivity.this).show();
+            }
+        });
 
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +99,65 @@ public class SheetActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+    }
+
+    private Dialog dialogActivity(Context context){
+        final Dialog dialog = new Dialog(context);
+        dialog.setContentView(R.layout.dialog_dice_2);
+
+        Button k20 = (Button) dialog.findViewById(R.id.k20);
+        Button k12 = (Button) dialog.findViewById(R.id.k12);
+        Button k10 = (Button) dialog.findViewById(R.id.k10);
+        Button k8 = (Button) dialog.findViewById(R.id.k8);
+        Button k6 = (Button) dialog.findViewById(R.id.k6);
+        Button k4 = (Button) dialog.findViewById(R.id.k4);
+
+        k20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                k20.setText("K20");
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(20), 10000);
+                snackbar.show();
+            }
+        });
+        k12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(12), 10000);
+                snackbar.show();
+            }
+        });
+        k10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(10), 10000);
+                snackbar.show();
+            }
+        });
+        k8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(8), 10000);
+                snackbar.show();
+            }
+        });
+        k6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(6), 10000);
+                snackbar.show();
+            }
+        });
+        k4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(4), 10000);
+                snackbar.show();
+            }
+        });
+
+        return dialog;
     }
 
     private void writeToFile(String fileName, String data, Context context) {

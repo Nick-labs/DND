@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">DND SHEET</string>
+    <string name="characters">Персонажи</string>
+    <string name="done">Готово</string>
+    <string name="k20">K20</string>
+    <string name="k12">K12</string>
+    <string name="k10">K10</string>
+    <string name="k8">K8</string>
+    <string name="k6">K6</string>
+    <string name="k4">K4</string>
+</resources>
