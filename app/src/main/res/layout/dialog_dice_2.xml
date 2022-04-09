@@ -20,7 +20,8 @@
                 android:layout_marginTop="32dp"
                 android:hint="@string/k20"
                 android:insetLeft="8dp"
-                android:insetRight="20dp" />
+                android:insetRight="20dp"
+                android:textColor="@color/beige" />
 
             <Button
                 android:id="@+id/k12"
@@ -29,7 +30,8 @@
                 android:layout_marginTop="32dp"
                 android:hint="@string/k12"
                 android:insetLeft="8dp"
-                android:insetRight="20dp" />
+                android:insetRight="20dp"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/k10"
@@ -38,7 +40,8 @@
                 android:layout_marginTop="32dp"
                 android:hint="@string/k10"
                 android:insetLeft="8dp"
-                android:insetRight="20dp" />
+                android:insetRight="20dp"
+                android:textColor="@color/white" />
 
         </TableRow>
 
@@ -54,7 +57,8 @@
                 android:layout_marginTop="32dp"
                 android:hint="@string/k8"
                 android:insetLeft="8dp"
-                android:insetRight="20dp" />
+                android:insetRight="20dp"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/k6"
@@ -63,7 +67,8 @@
                 android:layout_marginTop="32dp"
                 android:hint="@string/k6"
                 android:insetLeft="8dp"
-                android:insetRight="20dp" />
+                android:insetRight="20dp"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/k4"
@@ -72,7 +77,8 @@
                 android:layout_marginTop="32dp"
                 android:hint="@string/k4"
                 android:insetLeft="8dp"
-                android:insetRight="20dp" />
+                android:insetRight="20dp"
+                android:textColor="@color/white" />
         </TableRow>
 
         <TableRow
@@ -84,6 +90,5 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </TableRow>
-
     </TableLayout>
 </RelativeLayout>
