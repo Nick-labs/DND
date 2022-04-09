@@ -66,8 +66,11 @@ public class MainActivity extends AppCompatActivity {
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             System.out.println(fileNames.get(position));
             Intent intent = new Intent(MainActivity.this, SheetActivity.class);
+            System.out.println();
             String json = readFile(files[position]);
             intent.putExtra("json", json);
+            intent.putExtra("file_name", fileNames.get(position) + ".json");
+            intent.putExtra("file_path", files[position].getPath());
             startActivityForResult(intent, 300);
 //                a.notifyDataSetInvalidated();
             }

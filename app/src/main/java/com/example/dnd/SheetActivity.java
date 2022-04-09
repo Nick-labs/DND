@@ -3,8 +3,10 @@ package com.example.dnd;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActionBar;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -27,10 +29,13 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class SheetActivity extends AppCompatActivity {
     Button buttonBack;
     Button dice;
+    Button deleteButton;
 
     EditText editTextName;
     EditText editTextClass;
@@ -134,6 +139,7 @@ public class SheetActivity extends AppCompatActivity {
 
 
         buttonBack = findViewById(R.id.buttonBack);
+        deleteButton = findViewById(R.id.deleteButton);
         dice = findViewById(R.id.dice);
         editTextName = findViewById(R.id.editTextName);
         editTextClass = findViewById(R.id.editTextClass);
@@ -154,8 +160,11 @@ public class SheetActivity extends AppCompatActivity {
             }
         });
 
+
         Intent intent = getIntent();
         String jsonString = intent.getStringExtra("json");
+        String fileName = intent.getStringExtra("file_name");
+        String filePath = intent.getStringExtra("file_path");
         System.out.println(jsonString);
 
         if (!jsonString.equals("")) {
@@ -209,6 +218,48 @@ public class SheetActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(SheetActivity.this);
+                builder1.setTitle("Delete");
+                builder1.setMessage("Are you sure?");
+                builder1.setCancelable(true);
+
+                builder1.setPositiveButton(
+                        "Yes",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                System.out.println("Delete " + filePath);
+                                File file = new File(filePath);
+                                System.out.println(file.exists());
+                                if (file.exists()) {
+                                    boolean deleted = file.delete();
+                                    if (deleted) {
+                                        Toast.makeText(getBaseContext(), "Удалено", Toast.LENGTH_LONG).show();
+                                    }
+;
+                                    System.out.println("Удалено");
+                                    finish();
+                                }
+
+                            }
+                        });
+
+                builder1.setNegativeButton(
+                        "No",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
+            }
+        });
+
 
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override

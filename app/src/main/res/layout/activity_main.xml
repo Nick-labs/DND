@@ -9,11 +9,11 @@
 
     <TextView
         android:id="@+id/charTextView"
-        android:layout_width="202dp"
-        android:layout_height="68dp"
+        android:layout_width="267dp"
+        android:layout_height="67dp"
         android:text="@string/characters"
         android:textColor="@color/black"
-        android:textSize="28sp"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.215"
