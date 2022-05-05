@@ -24,6 +24,9 @@
             android:name="com.example.dnd.DndSu"
             android:exported="false" />
         <activity
+            android:name="com.example.dnd.SheetActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.dnd.MainActivity"
             android:exported="true" >
             <intent-filter>
