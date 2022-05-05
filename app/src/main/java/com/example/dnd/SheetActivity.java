@@ -160,11 +160,9 @@ public class SheetActivity extends AppCompatActivity {
             }
         });
 
-
         Intent intent = getIntent();
         String jsonString = intent.getStringExtra("json");
-        String fileName = intent.getStringExtra("file_name");
-        String filePath = intent.getStringExtra("file_path");
+        String path = this.getFilesDir().toString();
         System.out.println(jsonString);
 
         if (!jsonString.equals("")) {
@@ -231,17 +229,22 @@ public class SheetActivity extends AppCompatActivity {
                         "Yes",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                System.out.println("Delete " + filePath);
-                                File file = new File(filePath);
-                                System.out.println(file.exists());
-                                if (file.exists()) {
-                                    boolean deleted = file.delete();
-                                    if (deleted) {
-                                        Toast.makeText(getBaseContext(), "Удалено", Toast.LENGTH_LONG).show();
+
+                                try {
+                                    File file = new File(path + "/" +  json.getString("name") + ".json");
+                                    System.out.println("Delete " + file);
+                                    System.out.println(file.exists());
+                                    if (file.exists()) {
+                                        boolean deleted = file.delete();
+                                        if (deleted) {
+                                            Toast.makeText(getBaseContext(), "Удалено", Toast.LENGTH_LONG).show();
+                                        }
+                                        ;
+                                        System.out.println("Удалено");
+                                        finish();
                                     }
-;
-                                    System.out.println("Удалено");
-                                    finish();
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
                                 }
 
                             }
@@ -251,6 +254,9 @@ public class SheetActivity extends AppCompatActivity {
                         "No",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                Toast.makeText(getBaseContext(),
+                                        "Молодец, и не надо удалять, это плохо))))",
+                                        Toast.LENGTH_LONG).show();
                                 dialog.cancel();
                             }
                         });
@@ -259,6 +265,7 @@ public class SheetActivity extends AppCompatActivity {
                 alert11.show();
             }
         });
+
 
 
         buttonBack.setOnClickListener(new View.OnClickListener() {

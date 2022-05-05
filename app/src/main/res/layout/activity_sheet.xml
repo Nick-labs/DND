@@ -297,7 +297,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textView7"
+                                android:id="@+id/textView711"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -330,7 +330,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textView7"
+                                android:id="@+id/textView71"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -359,7 +359,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/textView52"
                         android:layout_width="196dp"
                         android:layout_height="wrap_content"
                         android:gravity="left"
@@ -406,7 +406,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textView7"
+                                android:id="@+id/textView72"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -432,7 +432,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textViewf"
+                                android:id="@+id/textViewf1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -464,7 +464,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textView7"
+                                android:id="@+id/textView73"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -490,7 +490,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textViewf"
+                                android:id="@+id/textViewf2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -518,7 +518,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/textView53"
                         android:layout_width="196dp"
                         android:layout_height="wrap_content"
                         android:gravity="left"
@@ -565,7 +565,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textView7"
+                                android:id="@+id/textView74"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -599,7 +599,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/textView54"
                         android:layout_width="196dp"
                         android:layout_height="wrap_content"
                         android:gravity="left"
@@ -646,7 +646,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textView7"
+                                android:id="@+id/textView75"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -672,7 +672,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textViewf"
+                                android:id="@+id/textViewf3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -729,7 +729,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textView7"
+                                android:id="@+id/textView76"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -755,7 +755,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textViewf"
+                                android:id="@+id/textViewf4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -780,7 +780,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textVsiew7"
+                                android:id="@+id/textVsiew71"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -807,7 +807,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/textView55"
                         android:layout_width="196dp"
                         android:layout_height="wrap_content"
                         android:gravity="left"
@@ -854,7 +854,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textView7"
+                                android:id="@+id/textView77"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -880,7 +880,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textViewf"
+                                android:id="@+id/textViewf5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -905,7 +905,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textVsiew7"
+                                android:id="@+id/textVsiew72"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -937,7 +937,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textView7"
+                                android:id="@+id/textView78"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -963,7 +963,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textViewf"
+                                android:id="@+id/textViewf6"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -988,7 +988,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textVsiew7"
+                                android:id="@+id/textVsiew73"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1016,7 +1016,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/textView56"
                         android:layout_width="196dp"
                         android:layout_height="wrap_content"
                         android:gravity="left"
@@ -1063,7 +1063,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textView7"
+                                android:id="@+id/textView79"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1089,7 +1089,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textViewf"
+                                android:id="@+id/textViewf7"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1114,7 +1114,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textVsiew7"
+                                android:id="@+id/textVsiew74"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1146,7 +1146,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textView7"
+                                android:id="@+id/textView710"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -1172,7 +1172,7 @@
                                 android:textSize="16dp" />
 
                             <TextView
-                                android:id="@+id/textViewf"
+                                android:id="@+id/textViewf8"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"

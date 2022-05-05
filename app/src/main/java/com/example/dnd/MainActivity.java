@@ -24,7 +24,10 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     Button button;
+    Button roomButton;
+    Button dnd_su;
     ListView listView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         button = findViewById(R.id.button);
+        roomButton = findViewById(R.id.room_button);
+        dnd_su = findViewById(R.id.dnd_su_button);
+        dnd_su.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, DndSu.class);
+                startActivity(intent);
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,7 +68,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, 300);
             }
         });
-
+        roomButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, RoomActivity.class);
+                startActivity(intent);
+            }
+        });
         listView = findViewById(R.id.listView);
 
         ArrayAdapter<String> a = new ArrayAdapter<>(this, android.R.layout.simple_expandable_list_item_1, fileNames);

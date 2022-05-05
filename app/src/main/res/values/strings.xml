@@ -2,6 +2,7 @@
     <string name="app_name">DND SHEET</string>
     <string name="characters">Персонажи</string>
     <string name="done">Готово</string>
+    <string name="d">Готово</string>
     <string name="delete">Удалить</string>
     <string name="name">Имя персонажа</string>
     <string name="class_">Класс</string>
