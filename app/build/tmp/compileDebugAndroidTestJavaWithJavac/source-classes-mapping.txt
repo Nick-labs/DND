@@ -1,0 +1,4 @@
+com/example/dnd/test/BuildConfig.java
+ com.example.dnd.test.BuildConfig
+com/example/dnd/ExampleInstrumentedTest.java
+ com.example.dnd.ExampleInstrumentedTest
