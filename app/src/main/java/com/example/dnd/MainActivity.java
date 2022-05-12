@@ -1,13 +1,11 @@
 package com.example.dnd;
 
-import static com.example.dnd.R.layout.*;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
-import android.app.Dialog;
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,30 +13,23 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import org.json.JSONException;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-//        CustomDialogFragment.TheFragmentListener {
-//
-//    // реализация методов интерфейса
-//    public void onTheFragmentBtnYClick(String url, String title) {
-//        // логика метода, данные уже в Activity
-//    }
-//
-//    public void onTheFragmentBtnXClick() {};
-//
-//    public void onTheFragmentCancelClick() {};
-    Button button;
+    Button button, dnd_su;
     ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(activity_main);
+        setContentView(R.layout.activity_main);
     }
 
     @Override
@@ -62,12 +53,22 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SheetActivity.class);
                 intent.putExtra("json", "");
+
                 startActivityForResult(intent, 300);
             }
         });
 
-        listView = findViewById(R.id.listView);
+        dnd_su = findViewById(R.id.dnd_su_button);
+        dnd_su.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, DndSu.class);
+                startActivity(intent);
+            }
+        });
 
+
+        listView = findViewById(R.id.listView);
 
         ArrayAdapter<String> a = new ArrayAdapter<>(this, android.R.layout.simple_expandable_list_item_1, fileNames);
         listView.setAdapter(a);
