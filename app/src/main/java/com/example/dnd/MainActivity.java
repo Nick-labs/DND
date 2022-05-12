@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     Button dnd_su;
     ListView listView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             System.out.println(fileNames.get(position));
             Intent intent = new Intent(MainActivity.this, SheetActivity.class);
-            System.out.println();
             String json = readFile(files[position]);
             intent.putExtra("json", json);
             intent.putExtra("file_name", fileNames.get(position) + ".json");

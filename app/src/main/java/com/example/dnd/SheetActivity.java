@@ -33,61 +33,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class SheetActivity extends AppCompatActivity {
-    Button buttonBack;
-    Button dice;
-    Button deleteButton;
+    Button buttonBack, dice, deleteButton;
 
-    EditText editTextName;
-    EditText editTextClass;
-    EditText editTextLevel;
-
-    EditText etKD;
-    EditText etIni;
-    EditText etSpeed;
-    EditText etHP;
-    EditText etTempHP;
-    EditText etHPDice;
-
-    EditText etSTR;
-    EditText etDEX;
-    EditText etCON;
-    EditText etINT;
-    EditText etWIS;
-    EditText etCHA;
-
-    EditText etAthletics;
-    EditText etSavSTR;
-
-    EditText etAcrobat;
-    EditText etHand;
-    EditText etStealth;
-    EditText etSavDEX;
-
-    EditText etSavCON;
-
-    EditText etAnaliz;
-    EditText etHist;
-    EditText etMag;
-    EditText etNature;
-    EditText etRelig;
-    EditText etSavINT;
-
-    EditText etVnimat;
-    EditText etSurv;
-    EditText etMed;
-    EditText etPronic;
-    EditText etAnim;
-    EditText etSavWIS;
-
-    EditText etPerf;
-    EditText etZapug;
-    EditText etLie;
-    EditText etUbezhd;
-    EditText etSavCHA;
-
-    EditText etInv;
-    EditText etProf;
-    EditText etFeatures;
+    EditText editTextName, editTextClass, editTextLevel, etKD, etIni, etSpeed, etHP, etTempHP, etHPDice, etSTR;
+    EditText etDEX, etCON, etINT, etWIS, etCHA, etAthletics, etSavSTR, etAcrobat, etHand, etStealth;
+    EditText etSavDEX, etSavCON, etAnaliz, etHist, etMag, etNature, etRelig, etSavINT, etVnimat;
+    EditText etSurv, etMed, etPronic, etAnim, etSavWIS, etPerf, etZapug, etLie, etUbezhd, etSavCHA;
+    EditText etInv, etProf, etFeatures;
 
     JSONObject json;
 
