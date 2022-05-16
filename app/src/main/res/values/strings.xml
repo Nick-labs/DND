@@ -4,6 +4,11 @@
     <string name="done">Готово</string>
     <string name="d">Готово</string>
     <string name="delete">Удалить</string>
+    <string name="download">Открыть</string>
+    <string name="upload">Загрузить</string>
+    <string name="sleh">⠀/</string>
+    <string name="damage">Урон</string>
+    <string name="treatment">Лечение</string>
     <string name="name">Имя персонажа</string>
     <string name="class_">Класс</string>
     <string name="level">Уровень</string>

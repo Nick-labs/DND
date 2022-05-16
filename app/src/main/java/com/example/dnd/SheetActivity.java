@@ -16,6 +16,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -33,9 +34,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class SheetActivity extends AppCompatActivity {
-    Button buttonBack, dice, deleteButton;
+    Button buttonBack, dice, deleteButton, downloadButton, uploadButton, etHP;
 
-    EditText editTextName, editTextClass, editTextLevel, etKD, etIni, etSpeed, etHP, etTempHP, etHPDice, etSTR;
+    EditText editTextName, editTextClass, editTextLevel, etKD, etIni, etSpeed, etTempHP, etHPDice, etSTR;
     EditText etDEX, etCON, etINT, etWIS, etCHA, etAthletics, etSavSTR, etAcrobat, etHand, etStealth;
     EditText etSavDEX, etSavCON, etAnaliz, etHist, etMag, etNature, etRelig, etSavINT, etVnimat;
     EditText etSurv, etMed, etPronic, etAnim, etSavWIS, etPerf, etZapug, etLie, etUbezhd, etSavCHA;
@@ -92,6 +93,8 @@ public class SheetActivity extends AppCompatActivity {
 
         buttonBack = findViewById(R.id.buttonBack);
         deleteButton = findViewById(R.id.deleteButton);
+        downloadButton = findViewById(R.id.downloadButton);
+        uploadButton = findViewById(R.id.uploadButton);
         dice = findViewById(R.id.dice);
         editTextName = findViewById(R.id.editTextName);
         editTextClass = findViewById(R.id.editTextClass);
@@ -168,7 +171,16 @@ public class SheetActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+        etHP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                String hp = etHP.getText().toString();
+
+                dialogActivityCalc(SheetActivity.this, hp).show();
+
+            }
+        });
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -183,7 +195,7 @@ public class SheetActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int id) {
 
                                 try {
-                                    File file = new File(path + "/" +  json.getString("name") + ".json");
+                                    File file = new File(path + "/" + json.getString("name") + ".json");
                                     System.out.println("Delete " + file);
                                     System.out.println(file.exists());
                                     if (file.exists()) {
@@ -217,7 +229,6 @@ public class SheetActivity extends AppCompatActivity {
                 alert11.show();
             }
         });
-
 
 
         buttonBack.setOnClickListener(new View.OnClickListener() {
@@ -295,61 +306,163 @@ public class SheetActivity extends AppCompatActivity {
         }
     }
 
-    private Dialog dialogActivity(Context context) {
+
+    private Dialog dialogActivityCalc(Context context, String hp) {
         final Dialog dialog = new Dialog(context);
-        dialog.setContentView(R.layout.dialog_dice_2);
+        dialog.setContentView(R.layout.dialog_hp_calc);
 
-        Button k20 = (Button) dialog.findViewById(R.id.k20);
-        Button k12 = (Button) dialog.findViewById(R.id.k12);
-        Button k10 = (Button) dialog.findViewById(R.id.k10);
-        Button k8 = (Button) dialog.findViewById(R.id.k8);
-        Button k6 = (Button) dialog.findViewById(R.id.k6);
-        Button k4 = (Button) dialog.findViewById(R.id.k4);
+        TextView newHp = (TextView) dialog.findViewById(R.id.newHp);
+        TextView oldHp = (TextView) dialog.findViewById(R.id.oldHp);
+        EditText ansEd = (EditText) dialog.findViewById(R.id.ansED);
 
-        k20.setOnClickListener(new View.OnClickListener() {
+        Button removeBth = (Button) dialog.findViewById(R.id.removeBth);
+        Button bth9 = (Button) dialog.findViewById(R.id.button9);
+        Button bth8 = (Button) dialog.findViewById(R.id.button8);
+        Button bth7 = (Button) dialog.findViewById(R.id.button7);
+        Button bth6 = (Button) dialog.findViewById(R.id.button6);
+        Button bth5 = (Button) dialog.findViewById(R.id.button5);
+        Button bth4 = (Button) dialog.findViewById(R.id.button4);
+        Button bth3 = (Button) dialog.findViewById(R.id.button3);
+        Button bth2 = (Button) dialog.findViewById(R.id.button2);
+        Button bth1 = (Button) dialog.findViewById(R.id.button1);
+        Button bth0 = (Button) dialog.findViewById(R.id.button0);
+        Button bthDamage = (Button) dialog.findViewById(R.id.buttonDamage);
+        Button bthTreatment = (Button) dialog.findViewById(R.id.buttonTreatment);
+
+        oldHp.setText(hp);
+        removeBth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { ansEd.setText(""); }});
+
+        bth9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { ansEd.setText(ansEd.getText() + "9"); }});
+
+        bth8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { ansEd.setText(ansEd.getText() + "8"); }});
+
+        bth7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { ansEd.setText(ansEd.getText() + "7"); }});
+
+        bth6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { ansEd.setText(ansEd.getText() + "6"); }});
+
+        bth5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { ansEd.setText(ansEd.getText() + "5"); }});
+
+        bth4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { ansEd.setText(ansEd.getText() + "4"); }});
+
+        bth3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { ansEd.setText(ansEd.getText() + "3"); }});
+
+        bth2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { ansEd.setText(ansEd.getText() + "2"); }});
+
+        bth1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { ansEd.setText(ansEd.getText() + "1"); }});
+
+        bth0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { ansEd.setText(ansEd.getText() + "0"); }});
+
+        bthTreatment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                k20.setText("K20");
-                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(20), 10000);
-                snackbar.show();
-            }
-        });
-        k12.setOnClickListener(new View.OnClickListener() {
+                if (newHp.getText() != "") {
+                    int nowHp = Integer.parseInt(newHp.getText().toString());
+                    int oldHp_ = Integer.parseInt(ansEd.getText().toString());
+                    newHp.setText( (oldHp_ + nowHp) + "");
+                } else{
+                    newHp.setText(ansEd.getText() + "");
+                }
+
+                ansEd.setText("");
+                etHP.setText((Integer.parseInt(newHp.getText().toString()) + Integer.parseInt(oldHp.getText().toString())) + "");
+            }});
+
+        bthDamage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(12), 10000);
-                snackbar.show();
-            }
-        });
-        k10.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(10), 10000);
-                snackbar.show();
-            }
-        });
-        k8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(8), 10000);
-                snackbar.show();
-            }
-        });
-        k6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(6), 10000);
-                snackbar.show();
-            }
-        });
-        k4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(4), 10000);
-                snackbar.show();
-            }
-        });
+                if (oldHp.getText() != "") {
+                    int nowHp = Integer.parseInt(oldHp.getText().toString());
+                    int oldHp_ = Integer.parseInt(ansEd.getText().toString());
+                    oldHp.setText( (nowHp - oldHp_) + "");
+                } else{
+                    oldHp.setText(ansEd.getText() + "");
+                }
+
+                ansEd.setText("");
+                etHP.setText(oldHp.getText() + "");
+            }});
 
         return dialog;
+        }
+
+
+        private Dialog dialogActivity (Context context){
+            final Dialog dialog = new Dialog(context);
+            dialog.setContentView(R.layout.dialog_dice_2);
+
+            Button k20 = (Button) dialog.findViewById(R.id.k20);
+            Button k12 = (Button) dialog.findViewById(R.id.k12);
+            Button k10 = (Button) dialog.findViewById(R.id.k10);
+            Button k8 = (Button) dialog.findViewById(R.id.k8);
+            Button k6 = (Button) dialog.findViewById(R.id.k6);
+            Button k4 = (Button) dialog.findViewById(R.id.k4);
+
+            k20.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    k20.setText("K20");
+                    Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(20), 10000);
+                    snackbar.show();
+                }
+            });
+            k12.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(12), 10000);
+                    snackbar.show();
+                }
+            });
+            k10.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(10), 10000);
+                    snackbar.show();
+                }
+            });
+            k8.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(8), 10000);
+                    snackbar.show();
+                }
+            });
+            k6.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(6), 10000);
+                    snackbar.show();
+                }
+            });
+            k4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(4), 10000);
+                    snackbar.show();
+                }
+            });
+
+            return dialog;
+        }
     }
-}
