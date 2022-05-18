@@ -3,8 +3,10 @@ package com.example.dnd;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class DndSuClient extends WebViewClient {
-    public DndSuClient(DndSu dndSu) {
+public class DndWebClient extends WebViewClient {
+    public DndWebClient(DndSu dndSu) {
+    }
+    public DndWebClient(DndСlub dndClub) {
     }
 
     @Override

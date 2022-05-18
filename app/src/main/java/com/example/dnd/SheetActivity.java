@@ -93,8 +93,6 @@ public class SheetActivity extends AppCompatActivity {
 
         buttonBack = findViewById(R.id.buttonBack);
         deleteButton = findViewById(R.id.deleteButton);
-        downloadButton = findViewById(R.id.downloadButton);
-        uploadButton = findViewById(R.id.uploadButton);
         dice = findViewById(R.id.dice);
         editTextName = findViewById(R.id.editTextName);
         editTextClass = findViewById(R.id.editTextClass);

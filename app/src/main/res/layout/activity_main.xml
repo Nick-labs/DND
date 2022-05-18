@@ -7,56 +7,42 @@
     tools:context=".MainActivity"
     >
 
-    <TextView
-        android:id="@+id/charTextView"
-        android:layout_width="155dp"
-        android:layout_height="35dp"
-        android:text="@string/characters"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
-
     <Button
-        android:id="@+id/button"
-        android:layout_width="66dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="24dp"
-        android:text="New"
-        android:textSize="10sp"
+        android:id="@+id/MasterButton"
+        android:layout_width="115dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="16dp"
+        android:text="master"
+        android:textSize="18sp"
         app:cornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.73"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/dnd_su_button"
-        android:layout_width="66dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="24dp"
-        android:text="dnd.su"
-        android:textSize="8sp"
-        app:cornerRadius="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.097"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/room_button"
-        android:layout_width="66dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="75dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="16dp"
         android:text="Room"
-        android:textSize="10sp"
+        android:textSize="12sp"
         app:cornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="135dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="16dp"
+        android:text="Новый персонаж"
+        android:textSize="15sp"
+        app:cornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.612"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -2,10 +2,8 @@ package com.example.dnd;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,19 +11,15 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
-import org.json.JSONException;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     Button button;
-    Button roomButton;
-    Button dnd_su;
+    Button roomButton, masterButton;
     ListView listView;
 
     @Override
@@ -51,14 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
         button = findViewById(R.id.button);
         roomButton = findViewById(R.id.room_button);
-        dnd_su = findViewById(R.id.dnd_su_button);
-        dnd_su.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, DndSu.class);
-                startActivity(intent);
-            }
-        });
+        masterButton = findViewById(R.id.MasterButton);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,6 +62,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        masterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MasterActivity.class);
+                startActivity(intent);
+            }
+        });
+
         listView = findViewById(R.id.listView);
 
         ArrayAdapter<String> a = new ArrayAdapter<>(this, android.R.layout.simple_expandable_list_item_1, fileNames);
