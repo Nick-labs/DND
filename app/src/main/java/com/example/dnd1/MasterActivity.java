@@ -8,11 +8,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.Arrays;
+import java.util.Random;
+
 public class MasterActivity extends AppCompatActivity {
-    Button dnd_su, dice, dnd_club, notes;
+    Button dnd_su, dice, dnd_club, notes, generate_bth;
+    TextView nameViev;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +27,8 @@ public class MasterActivity extends AppCompatActivity {
         dice = findViewById(R.id.dice);
         dnd_club = findViewById(R.id.dnd_club_bth);
         notes = findViewById(R.id.notes);
+        generate_bth = findViewById(R.id.generate_bth);
+        nameViev = findViewById(R.id.nameViev);
 
         dnd_su.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +59,23 @@ public class MasterActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        generate_bth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nameViev.setText("");
+                String[] mTempArray = getResources().getStringArray(R.array.names);
+                System.out.println(Arrays.toString(mTempArray));
+                Random rand = new Random();
+                for (int i = 0; i < 10; i++){
+                    int number = rand.nextInt(300);
+                    String name = mTempArray[number];
+                    nameViev.append(name + "\n");
+                }
+
+            }
+        });
+
     }
 
     private Dialog dialogActivity (Context context){
