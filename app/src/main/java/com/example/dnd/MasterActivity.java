@@ -9,10 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.dnd.NotesActivity;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MasterActivity extends AppCompatActivity {
-    Button dnd_su, dice, dnd_club;
+    Button dnd_su, dice, dnd_club, notes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +22,7 @@ public class MasterActivity extends AppCompatActivity {
         dnd_su = findViewById(R.id.dnd_su_bth);
         dice = findViewById(R.id.dice);
         dnd_club = findViewById(R.id.dnd_club_bth);
+        notes = findViewById(R.id.notes);
 
         dnd_su.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +43,14 @@ public class MasterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dialogActivity(MasterActivity.this).show();
+            }
+        });
+
+        notes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MasterActivity.this, NotesActivity.class);
+                startActivity(intent);
             }
         });
     }

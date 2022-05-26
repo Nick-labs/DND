@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     Button button;
     Button roomButton, masterButton;
     ListView listView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +38,10 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<String> fileNames = new ArrayList<>();
         Log.d("Files", "Size: " + files.length);
         for (File file : files) {
-            Log.d("Files", "FilePath: " + file.getPath());
-            fileNames.add(file.getName().replace(".json", ""));
+            if(!file.getName().equals("file.txt")){
+                Log.d("Files", "FilePath: " + file.getPath());
+                fileNames.add(file.getName().replace(".json", ""));
+            }
         }
 
         button = findViewById(R.id.button);
@@ -76,15 +77,15 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> a = new ArrayAdapter<>(this, android.R.layout.simple_expandable_list_item_1, fileNames);
         listView.setAdapter(a);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            System.out.println(fileNames.get(position));
-            Intent intent = new Intent(MainActivity.this, SheetActivity.class);
-            String json = readFile(files[position]);
-            intent.putExtra("json", json);
-            intent.putExtra("file_name", fileNames.get(position) + ".json");
-            intent.putExtra("file_path", files[position].getPath());
-            startActivityForResult(intent, 300);
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                System.out.println(fileNames.get(position));
+                Intent intent = new Intent(MainActivity.this, SheetActivity.class);
+                String json = readFile(files[position]);
+                intent.putExtra("json", json);
+                intent.putExtra("file_name", fileNames.get(position) + ".json");
+                intent.putExtra("file_path", files[position].getPath());
+                startActivityForResult(intent, 300);
 //                a.notifyDataSetInvalidated();
             }
         });
