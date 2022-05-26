@@ -10,7 +10,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="69dp"
+            android:layout_height="75dp"
             android:orientation="horizontal">
 
             <TextView
@@ -25,6 +25,7 @@
                 android:layout_width="70dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:text="0"
                 android:textAlignment="viewEnd"
                 android:textSize="50sp" />
 
@@ -38,7 +39,7 @@
 
             <TextView
                 android:id="@+id/oldHp"
-                android:layout_width="70dp"
+                android:layout_width="77dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="50sp" />
@@ -51,7 +52,7 @@
 
             <EditText
                 android:id="@+id/ansED"
-                android:layout_width="293dp"
+                android:layout_width="280dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"

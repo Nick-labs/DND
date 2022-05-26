@@ -149,7 +149,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="75dp"
+                android:layout_height="95dp"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
@@ -161,7 +161,7 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <Button
+                    <EditText
                         android:id="@+id/etHP"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -170,13 +170,22 @@
                         android:gravity="center_horizontal"
 
                         android:text="8" />
-
                     <TextView
                         android:id="@+id/textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/hp" />
+
+                    <Button
+                        android:id="@+id/etHP_Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+
+                        android:ems="10"
+                        android:gravity="center_horizontal" />
+
+
                 </LinearLayout>
 
                 <LinearLayout
