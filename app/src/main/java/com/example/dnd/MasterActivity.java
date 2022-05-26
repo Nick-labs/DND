@@ -14,6 +14,9 @@ import com.google.android.material.snackbar.Snackbar;
 
 import org.xmlpull.v1.XmlPullParser;
 
+import java.util.Arrays;
+import java.util.Random;
+
 public class MasterActivity extends AppCompatActivity {
     Button dnd_su, dice, dnd_club, notes, generate_btn, diceRoomBtn;
     TextView nameView;
@@ -65,6 +68,22 @@ public class MasterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MasterActivity.this, NotesActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        generate_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nameView.setText("");
+                String[] mTempArray = getResources().getStringArray(R.array.names);
+                System.out.println(Arrays.toString(mTempArray));
+                Random rand = new Random();
+                for (int i = 0; i < 10; i++){
+                    int number = rand.nextInt(300);
+                    String name = mTempArray[number];
+                    nameView.append(name + "\n");
+                }
+
             }
         });
     }

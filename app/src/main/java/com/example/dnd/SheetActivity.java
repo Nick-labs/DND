@@ -10,6 +10,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -37,14 +39,14 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class SheetActivity extends AppCompatActivity {
-    Button buttonBack, dice, deleteButton, downloadButton, uploadButton, etHP, connectBtn;
+    Button buttonBack, dice, deleteButton, etHP_Button, connectBtn;
     EditText etIP;
 
     EditText editTextName, editTextClass, editTextLevel, etKD, etIni, etSpeed, etTempHP, etHPDice, etSTR;
     EditText etDEX, etCON, etINT, etWIS, etCHA, etAthletics, etSavSTR, etAcrobat, etHand, etStealth;
     EditText etSavDEX, etSavCON, etAnaliz, etHist, etMag, etNature, etRelig, etSavINT, etVnimat;
     EditText etSurv, etMed, etPronic, etAnim, etSavWIS, etPerf, etZapug, etLie, etUbezhd, etSavCHA;
-    EditText etInv, etProf, etFeatures;
+    EditText etInv, etProf, etFeatures, etHP;
 
     JSONObject json;
 
@@ -56,6 +58,8 @@ public class SheetActivity extends AppCompatActivity {
 
     Thread Thread1 = null;
     Socket socket = null;
+
+    String now_hp = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +73,7 @@ public class SheetActivity extends AppCompatActivity {
         etKD = findViewById(R.id.etKD);
         etIni = findViewById(R.id.etIni);
         etSpeed = findViewById(R.id.etSpeed);
+        etHP_Button = findViewById(R.id.etHP_Button);
         etHP = findViewById(R.id.etHP);
         etTempHP = findViewById(R.id.etTempHP);
         etHPDice = findViewById(R.id.etHPDice);
@@ -193,7 +198,27 @@ public class SheetActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-        etHP.setOnClickListener(new View.OnClickListener() {
+        etHP_Button.setText(etHP.getText() + "/" + etHP.getText());
+        now_hp = String.valueOf(etHP.getText());
+        etHP.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                now_hp = String.valueOf(etHP.getText());
+                etHP_Button.setText(etHP.getText() + "/" + etHP.getText());
+            }
+        });
+
+        etHP_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -335,7 +360,7 @@ public class SheetActivity extends AppCompatActivity {
 
         TextView newHp = (TextView) dialog.findViewById(R.id.newHp);
         TextView oldHp = (TextView) dialog.findViewById(R.id.oldHp);
-        EditText ansEd = (EditText) dialog.findViewById(R.id.ansED);
+        EditText panel = (EditText) dialog.findViewById(R.id.ansED);
 
         Button removeBth = (Button) dialog.findViewById(R.id.removeBth);
         Button bth9 = (Button) dialog.findViewById(R.id.button9);
@@ -352,114 +377,79 @@ public class SheetActivity extends AppCompatActivity {
         Button bthTreatment = (Button) dialog.findViewById(R.id.buttonTreatment);
 
         oldHp.setText(hp);
+        newHp.setText(now_hp);
+
+
         removeBth.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                ansEd.setText("");
-            }
-        });
+            public void onClick(View v) { panel.setText(""); }});
 
         bth9.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                ansEd.setText(ansEd.getText() + "9");
-            }
-        });
+            public void onClick(View v) { panel.append("9");}});
 
         bth8.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                ansEd.setText(ansEd.getText() + "8");
-            }
-        });
+            public void onClick(View v) { panel.append("8"); }});
 
         bth7.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                ansEd.setText(ansEd.getText() + "7");
-            }
-        });
+            public void onClick(View v) { panel.append("7"); }});
 
         bth6.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                ansEd.setText(ansEd.getText() + "6");
-            }
-        });
+            public void onClick(View v) { panel.append("6"); }});
 
         bth5.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                ansEd.setText(ansEd.getText() + "5");
-            }
-        });
+            public void onClick(View v) { panel.append("5"); }});
 
         bth4.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                ansEd.setText(ansEd.getText() + "4");
-            }
-        });
+            public void onClick(View v) { panel.append("4"); }});
 
         bth3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                ansEd.setText(ansEd.getText() + "3");
-            }
-        });
+            public void onClick(View v) { panel.append("3"); }});
 
         bth2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                ansEd.setText(ansEd.getText() + "2");
-            }
-        });
+            public void onClick(View v) { panel.append("2"); }});
 
         bth1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                ansEd.setText(ansEd.getText() + "1");
-            }
-        });
+            public void onClick(View v) { panel.append("1"); }});
 
         bth0.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                ansEd.setText(ansEd.getText() + "0");
-            }
-        });
+            public void onClick(View v) { panel.append("0"); }});
 
         bthTreatment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (newHp.getText() != "") {
-                    int nowHp = Integer.parseInt(newHp.getText().toString());
-                    int oldHp_ = Integer.parseInt(ansEd.getText().toString());
-                    newHp.setText((oldHp_ + nowHp) + "");
-                } else {
-                    newHp.setText(ansEd.getText() + "");
+                if (!newHp.getText().toString().equals("0") || !newHp.getText().toString().equals("")) {
+                    newHp.setText(String.valueOf(Integer.parseInt(String.valueOf(newHp.getText())) + Integer.parseInt(String.valueOf(panel.getText()))));
+                } else{
+                    newHp.setText(panel.getText());
                 }
+                now_hp = String.valueOf(Integer.parseInt(newHp.getText().toString()));
+                panel.setText("");
+                etHP_Button.setText(String.valueOf(Integer.parseInt(newHp.getText().toString()) + "/" + etHP.getText()));
 
-                ansEd.setText("");
-                etHP.setText((Integer.parseInt(newHp.getText().toString()) + Integer.parseInt(oldHp.getText().toString())) + "");
-            }
-        });
-
+            }});
         bthDamage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (oldHp.getText() != "") {
-                    int nowHp = Integer.parseInt(oldHp.getText().toString());
-                    int oldHp_ = Integer.parseInt(ansEd.getText().toString());
-                    oldHp.setText((nowHp - oldHp_) + "");
-                } else {
-                    oldHp.setText(ansEd.getText() + "");
+                if (!newHp.getText().toString().equals("0") || !newHp.getText().toString().equals("")) {
+                    newHp.setText(String.valueOf(Integer.parseInt(String.valueOf(newHp.getText())) - Integer.parseInt(String.valueOf(panel.getText()))));
+                } else{
+                    newHp.setText(panel.getText());
                 }
+                now_hp = String.valueOf(Integer.parseInt(newHp.getText().toString()));
+                panel.setText("");
+                etHP_Button.setText(String.valueOf(Integer.parseInt(newHp.getText().toString()) + "/" + etHP.getText()));
 
-                ansEd.setText("");
-                etHP.setText(oldHp.getText() + "");
-            }
-        });
+            }});
 
         return dialog;
     }

@@ -19,6 +19,6 @@ public class DndСlub extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
         DndWebClient wbc = new DndWebClient(this);
         wb.setWebViewClient(wbc);
-        wb.loadUrl("https://longstoryshort.app/srd/");
+        wb.loadUrl("https://old.dnd5.club/");
     }
 }
