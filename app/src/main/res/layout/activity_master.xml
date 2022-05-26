@@ -8,10 +8,10 @@
 
     <Button
         android:id="@+id/dnd_club_bth"
-        android:layout_width="189dp"
-        android:layout_height="90dp"
+        android:layout_width="151dp"
+        android:layout_height="80dp"
         android:text="@string/dnd5_club"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +58,9 @@
         android:layout_weight="1"
         android:backgroundTintMode="src_over"
         android:foregroundGravity="fill_horizontal"
+        android:gravity="center"
         android:singleLine="false"
+        android:textSize="32sp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,10 +69,10 @@
 
     <Button
         android:id="@+id/dnd_su_bth"
-        android:layout_width="177dp"
-        android:layout_height="88dp"
+        android:layout_width="137dp"
+        android:layout_height="80dp"
         android:text="@string/dnd_su"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,23 +88,23 @@
         android:layout_marginTop="485dp"
         android:text="@string/dice"
         android:textSize="15sp"
-        app:cornerRadius="35dp"
+        app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
+        app:layout_constraintHorizontal_bias="0.935"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.795" />
 
     <Button
         android:id="@+id/diceRoomBtn"
-        android:layout_width="130dp"
+        android:layout_width="107dp"
         android:layout_height="81dp"
         android:layout_marginBottom="32dp"
         android:text="@string/dice_room"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/dice"
-        app:layout_constraintHorizontal_bias="0.342"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toEndOf="@+id/notes" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

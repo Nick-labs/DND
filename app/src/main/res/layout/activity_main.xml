@@ -9,14 +9,14 @@
 
     <Button
         android:id="@+id/MasterButton"
-        android:layout_width="115dp"
-        android:layout_height="65dp"
+        android:layout_width="130dp"
+        android:layout_height="66dp"
         android:layout_marginTop="16dp"
         android:text="master"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:cornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,11 +35,11 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="135dp"
+        android:layout_width="151dp"
         android:layout_height="65dp"
         android:layout_marginTop="16dp"
         android:text="Новый персонаж"
-        android:textSize="15sp"
+        android:textSize="14sp"
         app:cornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.612"

@@ -149,7 +149,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="95dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
@@ -170,6 +170,7 @@
                         android:gravity="center_horizontal"
 
                         android:text="8" />
+
                     <TextView
                         android:id="@+id/textView"
                         android:layout_width="match_parent"
@@ -180,7 +181,7 @@
                     <Button
                         android:id="@+id/etHP_Button"
                         android:layout_width="wrap_content"
-                        android:layout_height="35dp"
+                        android:layout_height="wrap_content"
 
                         android:ems="10"
                         android:gravity="center_horizontal" />
@@ -1271,8 +1272,8 @@
                     android:id="@+id/etIP"
                     android:layout_width="223dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20sp"
-                    android:layout_marginEnd="20sp"
+                    android:layout_marginStart="5sp"
+                    android:layout_marginEnd="5sp"
                     android:ems="10"
                     android:gravity="start|top"
                     android:hint="@string/ip"
@@ -1299,6 +1300,7 @@
         android:text="@string/dice"
         android:textSize="10sp"
         app:cornerRadius="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.866"
         app:layout_constraintStart_toStartOf="parent"
