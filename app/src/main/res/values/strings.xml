@@ -53,4 +53,13 @@
     <string name="inventory">Снаряжение</string>
     <string name="prof">Владения</string>
     <string name="features">Умения</string>
+    <string name="enter_text">Enter text</string>
+    <string name="dice_room">dice room</string>
+    <string name="dnd5_club">dnd5.club</string>
+    <string name="generate_name">Generate name</string>
+    <string name="notes">notes</string>
+    <string name="dice">Dice</string>
+    <string name="dnd_su">dnd.su</string>
+    <string name="connect_btn">Connect</string>
+    <string name="ip">IP</string>
 </resources>

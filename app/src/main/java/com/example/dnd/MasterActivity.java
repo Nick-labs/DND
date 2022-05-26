@@ -8,12 +8,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-import com.example.dnd.NotesActivity;
 import com.google.android.material.snackbar.Snackbar;
 
+import org.xmlpull.v1.XmlPullParser;
+
 public class MasterActivity extends AppCompatActivity {
-    Button dnd_su, dice, dnd_club, notes;
+    Button dnd_su, dice, dnd_club, notes, generate_btn, diceRoomBtn;
+    TextView nameView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +27,9 @@ public class MasterActivity extends AppCompatActivity {
         dice = findViewById(R.id.dice);
         dnd_club = findViewById(R.id.dnd_club_bth);
         notes = findViewById(R.id.notes);
+        generate_btn = findViewById(R.id.generate_btn);
+        diceRoomBtn = findViewById(R.id.diceRoomBtn);
+        nameView = findViewById(R.id.nameView);
 
         dnd_su.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +42,13 @@ public class MasterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MasterActivity.this, DndСlub.class);
+                startActivity(intent);
+            }
+        });
+        diceRoomBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MasterActivity.this, RoomActivity.class);
                 startActivity(intent);
             }
         });
@@ -55,7 +69,7 @@ public class MasterActivity extends AppCompatActivity {
         });
     }
 
-    private Dialog dialogActivity (Context context){
+    private Dialog dialogActivity(Context context) {
         final Dialog dialog = new Dialog(context);
         dialog.setContentView(R.layout.dialog_dice_2);
 

@@ -29,12 +29,16 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.Socket;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class SheetActivity extends AppCompatActivity {
-    Button buttonBack, dice, deleteButton, downloadButton, uploadButton, etHP;
+    Button buttonBack, dice, deleteButton, downloadButton, uploadButton, etHP, connectBtn;
+    EditText etIP;
 
     EditText editTextName, editTextClass, editTextLevel, etKD, etIni, etSpeed, etTempHP, etHPDice, etSTR;
     EditText etDEX, etCON, etINT, etWIS, etCHA, etAthletics, etSavSTR, etAcrobat, etHand, etStealth;
@@ -43,6 +47,15 @@ public class SheetActivity extends AppCompatActivity {
     EditText etInv, etProf, etFeatures;
 
     JSONObject json;
+
+    String serverIP;
+    int serverPort = 8080;
+
+    private PrintWriter output;
+    private BufferedReader input;
+
+    Thread Thread1 = null;
+    Socket socket = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,9 +114,20 @@ public class SheetActivity extends AppCompatActivity {
         etProf = findViewById(R.id.editTextProf);
         etFeatures = findViewById(R.id.editTextFeatures);
 
+        etIP = findViewById(R.id.etIP);
+        connectBtn = findViewById(R.id.connectBtn);
+        connectBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                serverIP = etIP.getText().toString().trim();
+                Thread1 = new Thread(new Thread1());
+                Thread1.start();
+            }
+        });
 
 
- /*
+
+        /*
             вызов диалогового окна для кубиков
         */
         dice.setOnClickListener(new View.OnClickListener() {
@@ -330,47 +354,80 @@ public class SheetActivity extends AppCompatActivity {
         oldHp.setText(hp);
         removeBth.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { ansEd.setText(""); }});
+            public void onClick(View v) {
+                ansEd.setText("");
+            }
+        });
 
         bth9.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { ansEd.setText(ansEd.getText() + "9"); }});
+            public void onClick(View v) {
+                ansEd.setText(ansEd.getText() + "9");
+            }
+        });
 
         bth8.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { ansEd.setText(ansEd.getText() + "8"); }});
+            public void onClick(View v) {
+                ansEd.setText(ansEd.getText() + "8");
+            }
+        });
 
         bth7.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { ansEd.setText(ansEd.getText() + "7"); }});
+            public void onClick(View v) {
+                ansEd.setText(ansEd.getText() + "7");
+            }
+        });
 
         bth6.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { ansEd.setText(ansEd.getText() + "6"); }});
+            public void onClick(View v) {
+                ansEd.setText(ansEd.getText() + "6");
+            }
+        });
 
         bth5.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { ansEd.setText(ansEd.getText() + "5"); }});
+            public void onClick(View v) {
+                ansEd.setText(ansEd.getText() + "5");
+            }
+        });
 
         bth4.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { ansEd.setText(ansEd.getText() + "4"); }});
+            public void onClick(View v) {
+                ansEd.setText(ansEd.getText() + "4");
+            }
+        });
 
         bth3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { ansEd.setText(ansEd.getText() + "3"); }});
+            public void onClick(View v) {
+                ansEd.setText(ansEd.getText() + "3");
+            }
+        });
 
         bth2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { ansEd.setText(ansEd.getText() + "2"); }});
+            public void onClick(View v) {
+                ansEd.setText(ansEd.getText() + "2");
+            }
+        });
 
         bth1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { ansEd.setText(ansEd.getText() + "1"); }});
+            public void onClick(View v) {
+                ansEd.setText(ansEd.getText() + "1");
+            }
+        });
 
         bth0.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { ansEd.setText(ansEd.getText() + "0"); }});
+            public void onClick(View v) {
+                ansEd.setText(ansEd.getText() + "0");
+            }
+        });
 
         bthTreatment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -378,14 +435,15 @@ public class SheetActivity extends AppCompatActivity {
                 if (newHp.getText() != "") {
                     int nowHp = Integer.parseInt(newHp.getText().toString());
                     int oldHp_ = Integer.parseInt(ansEd.getText().toString());
-                    newHp.setText( (oldHp_ + nowHp) + "");
-                } else{
+                    newHp.setText((oldHp_ + nowHp) + "");
+                } else {
                     newHp.setText(ansEd.getText() + "");
                 }
 
                 ansEd.setText("");
                 etHP.setText((Integer.parseInt(newHp.getText().toString()) + Integer.parseInt(oldHp.getText().toString())) + "");
-            }});
+            }
+        });
 
         bthDamage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -393,74 +451,146 @@ public class SheetActivity extends AppCompatActivity {
                 if (oldHp.getText() != "") {
                     int nowHp = Integer.parseInt(oldHp.getText().toString());
                     int oldHp_ = Integer.parseInt(ansEd.getText().toString());
-                    oldHp.setText( (nowHp - oldHp_) + "");
-                } else{
+                    oldHp.setText((nowHp - oldHp_) + "");
+                } else {
                     oldHp.setText(ansEd.getText() + "");
                 }
 
                 ansEd.setText("");
                 etHP.setText(oldHp.getText() + "");
-            }});
+            }
+        });
 
         return dialog;
-        }
+    }
 
 
-        private Dialog dialogActivity (Context context){
-            final Dialog dialog = new Dialog(context);
-            dialog.setContentView(R.layout.dialog_dice_2);
+    private Dialog dialogActivity(Context context) {
+        final Dialog dialog = new Dialog(context);
+        dialog.setContentView(R.layout.dialog_dice_2);
 
-            Button k20 = (Button) dialog.findViewById(R.id.k20);
-            Button k12 = (Button) dialog.findViewById(R.id.k12);
-            Button k10 = (Button) dialog.findViewById(R.id.k10);
-            Button k8 = (Button) dialog.findViewById(R.id.k8);
-            Button k6 = (Button) dialog.findViewById(R.id.k6);
-            Button k4 = (Button) dialog.findViewById(R.id.k4);
+        Button k20 = (Button) dialog.findViewById(R.id.k20);
+        Button k12 = (Button) dialog.findViewById(R.id.k12);
+        Button k10 = (Button) dialog.findViewById(R.id.k10);
+        Button k8 = (Button) dialog.findViewById(R.id.k8);
+        Button k6 = (Button) dialog.findViewById(R.id.k6);
+        Button k4 = (Button) dialog.findViewById(R.id.k4);
 
-            k20.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    k20.setText("K20");
-                    Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(20), 10000);
-                    snackbar.show();
-                }
-            });
-            k12.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(12), 10000);
-                    snackbar.show();
-                }
-            });
-            k10.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(10), 10000);
-                    snackbar.show();
-                }
-            });
-            k8.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(8), 10000);
-                    snackbar.show();
-                }
-            });
-            k6.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(6), 10000);
-                    snackbar.show();
-                }
-            });
-            k4.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(4), 10000);
-                    snackbar.show();
-                }
-            });
+        k20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                k20.setText("K20");
+                int dice = Dice.randomDies(20);
+                Snackbar snackbar = Snackbar.make(v, " " + dice, 10000);
+                new Thread(new Thread3(String.valueOf(dice))).start();
+                snackbar.show();
+            }
+        });
+        k12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(12), 10000);
+                snackbar.show();
+            }
+        });
+        k10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(10), 10000);
+                snackbar.show();
+            }
+        });
+        k8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(8), 10000);
+                snackbar.show();
+            }
+        });
+        k6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(6), 10000);
+                snackbar.show();
+            }
+        });
+        k4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(4), 10000);
+                snackbar.show();
+            }
+        });
 
-            return dialog;
+        return dialog;
+    }
+
+    class Thread1 implements Runnable {
+        @Override
+        public void run() {
+            Socket socket;
+            try {
+                socket = new Socket(serverIP, serverPort);
+                output = new PrintWriter(socket.getOutputStream());
+                input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(SheetActivity.this, "Connected", Toast.LENGTH_SHORT).show();
+                    }
+                });
+//                new Thread(new Thread2()).start();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
+
+// Сообщения от сервера
+//    class Thread2 implements Runnable {
+//        @Override
+//        public void run() {
+//            try {
+//                while (true) {
+//                    try {
+//                        String message = input.readLine();
+//                        if (message != null) {
+//                            runOnUiThread(() -> tvMessages.append("server: " + message + "\n"));
+//                        }
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                    try {
+//                        Thread.sleep(500);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            } catch (Throwable e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
+
+    class Thread3 implements Runnable {
+        private String message;
+
+        Thread3(String message) {
+            this.message = message;
+        }
+
+        @Override
+        public void run() {
+            if (null == output) return;
+            System.out.println(message);
+            output.println(message + "\n");
+            output.flush();
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(SheetActivity.this, "Sent", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    }
+}

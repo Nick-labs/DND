@@ -38,7 +38,7 @@ public class NotesActivity extends AppCompatActivity {
             StringBuilder total = new StringBuilder();
             String line;
             while ((line = r.readLine()) != null) {
-                total.append(line);
+                total.append(line).append("\n");
             }
             notes_site.setText(total);
             r.close();
@@ -121,7 +121,7 @@ public class NotesActivity extends AppCompatActivity {
             StringBuilder total = new StringBuilder();
             String line;
             while ((line = r.readLine()) != null) {
-                total.append(line);
+                total.append(line).append("\n");
             }
             r.close();
             inputStream.close();
