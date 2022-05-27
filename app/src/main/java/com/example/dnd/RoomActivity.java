@@ -76,6 +76,7 @@ public class RoomActivity extends AppCompatActivity {
                     input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                     runOnUiThread(() -> Toast.makeText(RoomActivity.this, "Connected", Toast.LENGTH_SHORT).show());
                     output.flush();
+//                    new Thread(new ThreadPlayer2()).start();
                     new Thread2().start();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -85,6 +86,29 @@ public class RoomActivity extends AppCompatActivity {
             }
         }
     }
+//
+//    class ThreadPlayer2 implements Runnable {
+//        @Override
+//        public void run() {
+//            Socket socket;
+//            try {
+//                serverSocket = new ServerSocket(SERVER_PORT);
+//                runOnUiThread(() -> tvIP.setText("IP: " + SERVER_IP));
+//                try {
+//                    socket = serverSocket.accept();
+//                    output = new PrintWriter(socket.getOutputStream());
+//                    input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+//                    runOnUiThread(() -> Toast.makeText(RoomActivity.this, "Connected", Toast.LENGTH_SHORT).show());
+//                    output.flush();
+//                    new Thread2().start();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
 
     private class Thread2 extends Thread {
         @Override
