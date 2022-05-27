@@ -12,8 +12,6 @@ import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 
-import org.xmlpull.v1.XmlPullParser;
-
 import java.util.Arrays;
 import java.util.Random;
 
@@ -34,41 +32,24 @@ public class MasterActivity extends AppCompatActivity {
         diceRoomBtn = findViewById(R.id.diceRoomBtn);
         nameView = findViewById(R.id.nameView);
 
-        dnd_su.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MasterActivity.this, DndSu.class);
-                startActivity(intent);
-            }
+        dnd_su.setOnClickListener(view -> {
+            Intent intent = new Intent(MasterActivity.this, DndSu.class);
+            startActivity(intent);
         });
-        dnd_club.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MasterActivity.this, DndСlub.class);
-                startActivity(intent);
-            }
+        dnd_club.setOnClickListener(view -> {
+            Intent intent = new Intent(MasterActivity.this, DndСlub.class);
+            startActivity(intent);
         });
-        diceRoomBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MasterActivity.this, RoomActivity.class);
-                startActivity(intent);
-            }
+        diceRoomBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(MasterActivity.this, RoomActivity.class);
+            startActivity(intent);
         });
 
-        dice.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogActivity(MasterActivity.this).show();
-            }
-        });
+        dice.setOnClickListener(v -> dialogActivity(MasterActivity.this).show());
 
-        notes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MasterActivity.this, NotesActivity.class);
-                startActivity(intent);
-            }
+        notes.setOnClickListener(v -> {
+            Intent intent = new Intent(MasterActivity.this, NotesActivity.class);
+            startActivity(intent);
         });
 
         generate_btn.setOnClickListener(new View.OnClickListener() {
@@ -102,42 +83,42 @@ public class MasterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 k20.setText("K20");
-                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(20), 10000);
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDice(20), 10000);
                 snackbar.show();
             }
         });
         k12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(12), 10000);
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDice(12), 10000);
                 snackbar.show();
             }
         });
         k10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(10), 10000);
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDice(10), 10000);
                 snackbar.show();
             }
         });
         k8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(8), 10000);
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDice(8), 10000);
                 snackbar.show();
             }
         });
         k6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(6), 10000);
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDice(6), 10000);
                 snackbar.show();
             }
         });
         k4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(4), 10000);
+                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDice(4), 10000);
                 snackbar.show();
             }
         });

@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         File directory = new File(path);
         File[] files = directory.listFiles();
         ArrayList<String> fileNames = new ArrayList<>();
-        Log.d("Files", "Size: " + files.length);
         for (File file : files) {
             if(!file.getName().equals("file.txt")){
                 Log.d("Files", "FilePath: " + file.getPath());
@@ -56,20 +55,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, 300);
             }
         });
-        roomButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, RoomActivity.class);
-                startActivity(intent);
-            }
+        roomButton.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, RoomActivity.class);
+            startActivity(intent);
         });
 
-        masterButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MasterActivity.class);
-                startActivity(intent);
-            }
+        masterButton.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, MasterActivity.class);
+            startActivity(intent);
         });
 
         listView = findViewById(R.id.listView);

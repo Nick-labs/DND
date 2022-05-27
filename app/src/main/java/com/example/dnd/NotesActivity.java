@@ -43,10 +43,8 @@ public class NotesActivity extends AppCompatActivity {
             notes_site.setText(total);
             r.close();
             inputStream.close();
-        } catch (FileNotFoundException fileNotFoundException) {
+        } catch (IOException fileNotFoundException) {
             fileNotFoundException.printStackTrace();
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
         }
 
 
@@ -60,22 +58,15 @@ public class NotesActivity extends AppCompatActivity {
 
                 builder1.setPositiveButton(
                         "Yes",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                notes_site.setText("");
-
-                            }
-                        });
+                        (dialog, id) -> notes_site.setText(""));
 
                 builder1.setNegativeButton(
                         "No",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                Toast.makeText(getBaseContext(),
-                                        "ok",
-                                        Toast.LENGTH_LONG).show();
-                                dialog.cancel();
-                            }
+                        (dialog, id) -> {
+                            Toast.makeText(getBaseContext(),
+                                    "ok",
+                                    Toast.LENGTH_LONG).show();
+                            dialog.cancel();
                         });
 
                 AlertDialog alert11 = builder1.create();

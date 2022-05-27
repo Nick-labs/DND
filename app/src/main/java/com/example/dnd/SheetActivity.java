@@ -1,42 +1,32 @@
 package com.example.dnd;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.snackbar.Snackbar;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 public class SheetActivity extends AppCompatActivity {
     Button buttonBack, dice, deleteButton, etHP_Button, connectBtn;
@@ -54,11 +44,10 @@ public class SheetActivity extends AppCompatActivity {
     int serverPort = 8080;
 
     private PrintWriter output;
-    private BufferedReader input;
+//    private BufferedReader input;
 
     Thread Thread1 = null;
-    Socket socket = null;
-
+    //    Socket socket = null;
     String now_hp = "";
 
     @Override
@@ -121,13 +110,10 @@ public class SheetActivity extends AppCompatActivity {
 
         etIP = findViewById(R.id.etIP);
         connectBtn = findViewById(R.id.connectBtn);
-        connectBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                serverIP = etIP.getText().toString().trim();
-                Thread1 = new Thread(new Thread1());
-                Thread1.start();
-            }
+        connectBtn.setOnClickListener(view -> {
+            serverIP = etIP.getText().toString().trim();
+            Thread1 = new Thread(new Thread1());
+            Thread1.start();
         });
 
 
@@ -135,17 +121,12 @@ public class SheetActivity extends AppCompatActivity {
         /*
             вызов диалогового окна для кубиков
         */
-        dice.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogActivity(SheetActivity.this).show();
-            }
-        });
+        dice.setOnClickListener(v -> dialogActivity(SheetActivity.this).show());
 
         Intent intent = getIntent();
         String jsonString = intent.getStringExtra("json");
         String path = this.getFilesDir().toString();
-        System.out.println(jsonString);
+//        System.out.println(jsonString);
 
         if (!jsonString.equals("")) {
             try {
@@ -218,63 +199,47 @@ public class SheetActivity extends AppCompatActivity {
             }
         });
 
-        etHP_Button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String hp = etHP.getText().toString();
-
-                dialogActivityCalc(SheetActivity.this, hp).show();
-
-            }
+        etHP_Button.setOnClickListener(v -> {
+            String hp = etHP.getText().toString();
+            dialogActivityCalc(SheetActivity.this, hp).show();
         });
-        deleteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(SheetActivity.this);
-                builder1.setTitle("Delete");
-                builder1.setMessage("Are you sure?");
-                builder1.setCancelable(true);
+        deleteButton.setOnClickListener(view -> {
+            AlertDialog.Builder builder1 = new AlertDialog.Builder(SheetActivity.this);
+            builder1.setTitle("Delete");
+            builder1.setMessage("Are you sure?");
+            builder1.setCancelable(true);
 
-                builder1.setPositiveButton(
-                        "Yes",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-
-                                try {
-                                    File file = new File(path + "/" + json.getString("name") + ".json");
-                                    System.out.println("Delete " + file);
-                                    System.out.println(file.exists());
-                                    if (file.exists()) {
-                                        boolean deleted = file.delete();
-                                        if (deleted) {
-                                            Toast.makeText(getBaseContext(), "Удалено", Toast.LENGTH_LONG).show();
-                                        }
-                                        ;
-                                        System.out.println("Удалено");
-                                        finish();
-                                    }
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
+            builder1.setPositiveButton(
+                    "Yes",
+                    (dialog, id) -> {
+                        try {
+                            File file = new File(path + "/" + json.getString("name") + ".json");
+                            System.out.println("Delete " + file);
+                            System.out.println(file.exists());
+                            if (file.exists()) {
+                                boolean deleted = file.delete();
+                                if (deleted) {
+                                    Toast.makeText(getBaseContext(), "Удалено", Toast.LENGTH_LONG).show();
                                 }
-
+                                System.out.println("Удалено");
+                                finish();
                             }
-                        });
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    });
 
-                builder1.setNegativeButton(
-                        "No",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                Toast.makeText(getBaseContext(),
-                                        "Молодец, и не надо удалять, это плохо))))",
-                                        Toast.LENGTH_LONG).show();
-                                dialog.cancel();
-                            }
-                        });
+            builder1.setNegativeButton(
+                    "No",
+                    (dialog, id) -> {
+                        Toast.makeText(getBaseContext(),
+                                "Молодец, и не надо удалять, это плохо))))",
+                                Toast.LENGTH_LONG).show();
+                        dialog.cancel();
+                    });
 
-                AlertDialog alert11 = builder1.create();
-                alert11.show();
-            }
+            AlertDialog alert11 = builder1.create();
+            alert11.show();
         });
 
 
@@ -349,7 +314,7 @@ public class SheetActivity extends AppCompatActivity {
             System.out.println("Created");
             outputStreamWriter.close();
         } catch (IOException e) {
-            Log.e("Exception", "File write failed: " + e.toString());
+            Log.e("Exception", "File write failed: " + e);
         }
     }
 
@@ -382,74 +347,56 @@ public class SheetActivity extends AppCompatActivity {
 
         removeBth.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { panel.setText(""); }});
+            public void onClick(View v) {
+                panel.setText("");
+            }
+        });
 
-        bth9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { panel.append("9");}});
+        bth9.setOnClickListener(v -> panel.append("9"));
 
-        bth8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { panel.append("8"); }});
+        bth8.setOnClickListener(v -> panel.append("8"));
 
-        bth7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { panel.append("7"); }});
+        bth7.setOnClickListener(v -> panel.append("7"));
 
-        bth6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { panel.append("6"); }});
+        bth6.setOnClickListener(v -> panel.append("6"));
 
-        bth5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { panel.append("5"); }});
+        bth5.setOnClickListener(v -> panel.append("5"));
 
-        bth4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { panel.append("4"); }});
+        bth4.setOnClickListener(v -> panel.append("4"));
 
-        bth3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { panel.append("3"); }});
+        bth3.setOnClickListener(v -> panel.append("3"));
 
-        bth2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { panel.append("2"); }});
+        bth2.setOnClickListener(v -> panel.append("2"));
 
-        bth1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { panel.append("1"); }});
+        bth1.setOnClickListener(v -> panel.append("1"));
 
-        bth0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { panel.append("0"); }});
+        bth0.setOnClickListener(v -> panel.append("0"));
 
         bthTreatment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!newHp.getText().toString().equals("0") || !newHp.getText().toString().equals("")) {
                     newHp.setText(String.valueOf(Integer.parseInt(String.valueOf(newHp.getText())) + Integer.parseInt(String.valueOf(panel.getText()))));
-                } else{
-                    newHp.setText(panel.getText());
-                }
+                } else newHp.setText(panel.getText());
                 now_hp = String.valueOf(Integer.parseInt(newHp.getText().toString()));
                 panel.setText("");
-                etHP_Button.setText(String.valueOf(Integer.parseInt(newHp.getText().toString()) + "/" + etHP.getText()));
-
-            }});
+                etHP_Button.setText(Integer.parseInt(newHp.getText().toString()) + "/" + etHP.getText());
+            }
+        });
         bthDamage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!newHp.getText().toString().equals("0") || !newHp.getText().toString().equals("")) {
                     newHp.setText(String.valueOf(Integer.parseInt(String.valueOf(newHp.getText())) - Integer.parseInt(String.valueOf(panel.getText()))));
-                } else{
+                } else {
                     newHp.setText(panel.getText());
                 }
                 now_hp = String.valueOf(Integer.parseInt(newHp.getText().toString()));
                 panel.setText("");
-                etHP_Button.setText(String.valueOf(Integer.parseInt(newHp.getText().toString()) + "/" + etHP.getText()));
+                etHP_Button.setText(Integer.parseInt(newHp.getText().toString()) + "/" + etHP.getText());
 
-            }});
+            }
+        });
 
         return dialog;
     }
@@ -470,44 +417,54 @@ public class SheetActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 k20.setText("K20");
-                int dice = Dice.randomDies(20);
+                int dice = Dice.randomDice(20);
                 Snackbar snackbar = Snackbar.make(v, " " + dice, 10000);
-                new Thread(new Thread3(String.valueOf(dice))).start();
+                new Thread(new Thread3(String.valueOf(dice), 20)).start();
                 snackbar.show();
             }
         });
         k12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(12), 10000);
+                int dice = Dice.randomDice(12);
+                Snackbar snackbar = Snackbar.make(v, " " + dice, 10000);
+                new Thread(new Thread3(String.valueOf(dice), 12)).start();
                 snackbar.show();
             }
         });
         k10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(10), 10000);
+                int dice = Dice.randomDice(10);
+                Snackbar snackbar = Snackbar.make(v, " " + dice, 10000);
+                new Thread(new Thread3(String.valueOf(dice), 10)).start();
                 snackbar.show();
             }
         });
         k8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(8), 10000);
+                int dice = Dice.randomDice(8);
+                Snackbar snackbar = Snackbar.make(v, " " + dice, 10000);
+                new Thread(new Thread3(String.valueOf(dice), 8)).start();
                 snackbar.show();
             }
         });
         k6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(6), 10000);
+                int dice = Dice.randomDice(6);
+                Snackbar snackbar = Snackbar.make(v, " " + dice, 10000);
+                new Thread(new Thread3(String.valueOf(dice), 6)).start();
                 snackbar.show();
             }
         });
         k4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar snackbar = Snackbar.make(v, " " + Dice.randomDies(4), 10000);
+                int dice = Dice.randomDice(4);
+                Snackbar snackbar = Snackbar.make(v, " " + dice, 10000);
+                new Thread(new Thread3(String.valueOf(dice), 4)).start();
                 snackbar.show();
             }
         });
@@ -522,13 +479,9 @@ public class SheetActivity extends AppCompatActivity {
             try {
                 socket = new Socket(serverIP, serverPort);
                 output = new PrintWriter(socket.getOutputStream());
-                input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(SheetActivity.this, "Connected", Toast.LENGTH_SHORT).show();
-                    }
-                });
+//                input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                runOnUiThread(() -> Toast.makeText(SheetActivity.this,
+                        "Connected", Toast.LENGTH_SHORT).show());
 //                new Thread(new Thread2()).start();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -563,24 +516,27 @@ public class SheetActivity extends AppCompatActivity {
 //    }
 
     class Thread3 implements Runnable {
-        private String message;
+        private final String diceThrow;
+        private final int dice;
 
-        Thread3(String message) {
-            this.message = message;
+        Thread3(String diceThrow, int dice) {
+            this.diceThrow = diceThrow;
+            this.dice = dice;
         }
 
         @Override
         public void run() {
             if (null == output) return;
-            System.out.println(message);
-            output.println(message + "\n");
+//            System.out.println(message);
+            String message = editTextName.getText().toString() + "(d" + dice + "): " + diceThrow;
+            output.println(message);
             output.flush();
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    Toast.makeText(SheetActivity.this, "Sent", Toast.LENGTH_SHORT).show();
-                }
-            });
+//            runOnUiThread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    Toast.makeText(SheetActivity.this, "Sent", Toast.LENGTH_SHORT).show();
+//                }
+//            });
         }
     }
 }
